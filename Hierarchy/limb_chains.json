@@ -1,0 +1,98 @@
+[
+  {
+    "name": "base",
+    "roots": ["interaction", "center_of_mass"],
+    "stops": [],
+    "note": "Core root segment"
+  },
+  {
+    "name": "spine",
+    "roots": ["pelvis"],
+    "stops": ["thigh_r", "thigh_l", "clavicle_r", "clavicle_l"],
+    "note": "Torso spine section"
+  },
+  {
+    "name": "arm_l",
+    "roots": ["clavicle_l", "ik_hand_root"],
+    "stops": ["ik_hand_r", 
+              "arm_pole_target_r", 
+              "pinky_metacarpal_l",
+              "ring_metacarpal_l", 
+              "middle_metacarpal_l", 
+              "index_metacarpal_l", 
+              "thumb_01_l"],
+    "note": "Left arm IK chain"
+  },
+  {
+    "name": "arm_r",
+    "roots": ["clavicle_r", "ik_hand_root"],
+    "stops": ["ik_hand_l", 
+              "arm_pole_target_l", 
+              "pinky_metacarpal_r", 
+              "ring_metacarpal_r", 
+              "middle_metacarpal_r", 
+              "index_metacarpal_r", 
+              "thumb_01_r"],
+    "note": "Right arm IK chain"
+  },
+  {
+    "name": "hand_l",
+    "roots": [
+              "pinky_metacarpal_l",
+              "ring_metacarpal_l", 
+              "middle_metacarpal_l", 
+              "index_metacarpal_l", 
+              "thumb_01_l"
+             ],
+    "stops": [],
+    "note": "Left hand IK chain"
+  },
+  {
+    "name": "hand_r",
+    "roots": [
+              "pinky_metacarpal_r",
+              "ring_metacarpal_r", 
+              "middle_metacarpal_r", 
+              "index_metacarpal_r", 
+              "thumb_01_r"
+             ],
+    "stops": [],
+    "note": "Right hand IK chain"
+  },
+  {
+    "name": "leg_l",
+    "roots": ["thigh_l", "ik_foot_root"],
+    "stops": ["leg_ik_r", "leg_pole_target_r"],
+    "note": "Left leg IK chain"
+  },
+  {
+    "name": "leg_r",
+    "roots": ["thigh_r", "ik_foot_root"],
+    "stops": ["leg_ik_l", "leg_pole_target_l"],
+    "note": "Right leg IK chain"
+  },
+  {
+    "name": "foot_l",
+    "roots": [
+              "pinky_metacarpal_l",
+              "ring_metacarpal_l", 
+              "middle_metacarpal_l", 
+              "index_metacarpal_l", 
+              "thumb_01_l"
+             ],
+    "stops": [],
+    "note": "Left foot IK chain"
+  },
+  {
+    "name": "foot_r",
+    "roots": [
+              "pinky_metacarpal_r",
+              "ring_metacarpal_r", 
+              "middle_metacarpal_r", 
+              "index_metacarpal_r", 
+              "thumb_01_r"
+             ],
+    "stops": [],
+    "note": "Right foot IK chain"
+  }
+]
