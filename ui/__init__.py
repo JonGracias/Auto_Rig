@@ -1,4 +1,4 @@
-import bpy
+import bpy # type: ignore
 import os
 import importlib
 from bpy.types import Panel, Operator, PropertyGroup # type: ignore

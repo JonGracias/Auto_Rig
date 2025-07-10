@@ -64,13 +64,17 @@ def serialize_constraint(constraint):
 
 def is_controller_bone(name):
     lowered = name.lower()
-    return any(prefix in lowered for prefix in ["ik_", "fk_", "mch_", "ctrl_", "helper", "pole", "target"])
+    return any(prefix in lowered for prefix in ["ik_", "fk_", "mch_", "ctrl_", "helper", "pole", "target", "twist"])
 
 def serialize_bone_data(chain, armature):
+    """Serialize bone and controller data from an armature limb chain."""
+
+    # Unpack chain definition
     root_bones, stop_bones = chain
     ue_bones = {}
     controllers = {}
 
+    # Ensure correct mode and gather edit bone data
     bpy.context.view_layer.objects.active = armature
     bpy.ops.object.mode_set(mode='EDIT')
     ebones = armature.data.edit_bones
@@ -78,71 +82,117 @@ def serialize_bone_data(chain, armature):
         eb.name: {"head": list(eb.head), "tail": list(eb.tail)} for eb in ebones
     }
 
+    # Switch to pose mode for extracting pose transforms
     bpy.ops.object.mode_set(mode='POSE')
     visited = set()
 
-    def traverse(bone):
-        if bone.name in visited or bone.name in stop_bones:
-            return
-        visited.add(bone.name)
-
-        pose_bone = bone
-        shape_obj = pose_bone.custom_shape
-        transform_obj = pose_bone.custom_shape_transform
-        bone_dict = {
-            "bone_collections": [col.name for col in pose_bone.bone.collections]
-                if hasattr(pose_bone.bone, "collections") else [],
-            "parent": pose_bone.parent.name if pose_bone.parent else None,
-            "children": [child.name for child in pose_bone.children if "twist" not in child.name.lower()],
-            "bone_color": {
+    def serialize_pose_bone(pose_bone, shape_obj, transform_obj):
+        """Serialize a single pose bone's data into a dictionary."""
+        # Bone color data
+        bone_color = (
+            {
                 "palette": pose_bone.bone_color.palette,
                 "custom_colors": {
                     "normal": list(pose_bone.bone_color.custom.normal),
                     "select": list(pose_bone.bone_color.custom.select),
                     "active": list(pose_bone.bone_color.custom.active)
                 } if pose_bone.bone_color.palette == 'CUSTOM' else None
-            } if hasattr(pose_bone, "bone_color") else None,
-            "custom_shape": shape_obj.name if shape_obj else None,
-            "custom_shape_transform": transform_obj.name if transform_obj else None,
-            "custom_shape_scale_xyz": list(pose_bone.custom_shape_scale_xyz),
-            "custom_shape_translation": list(pose_bone.custom_shape_translation),
-            "custom_shape_wire_width": pose_bone.custom_shape_wire_width,
-            "custom_shape_rotation": list(shape_obj.rotation_euler) if shape_obj else None,
-            "use_custom_shape_bone_size": pose_bone.use_custom_shape_bone_size,
-            "lock_location": list(pose_bone.lock_location),
-            "lock_rotation": list(pose_bone.lock_rotation),
-            "lock_rotation_w": pose_bone.lock_rotation_w,
-            "lock_scale": list(pose_bone.lock_scale),
-            "rotation_mode": pose_bone.rotation_mode,
-            "constraints": [serialize_constraint(c) for c in pose_bone.constraints],
-            "drivers": [
-                serialize_driver(d) for d in armature.animation_data.drivers
-                if d.data_path.startswith(f'pose.bones["{bone.name}"]')
-            ] if armature.animation_data else [],
-            "custom_properties": {
-                k: clean_value(pose_bone[k]) for k in pose_bone.keys() if not k.startswith("_")
-            },
-            "rna_ui": {
-                k: clean_value(pose_bone["_RNA_UI"][k]) for k in pose_bone.get("_RNA_UI", {}) if k in pose_bone
             }
+            if hasattr(pose_bone, "bone_color")
+            else None
+        )
+
+        # Constraints data
+        constraints = [serialize_constraint(c) for c in pose_bone.constraints]
+
+        # Drivers data
+        drivers = []
+        if armature.animation_data:
+            for d in armature.animation_data.drivers:
+                if d.data_path.startswith(f'pose.bones["{pose_bone.name}"]'):
+                    drivers.append(serialize_driver(d))
+
+        # Custom properties
+        custom_properties = {
+            k: clean_value(pose_bone[k])
+            for k in pose_bone.keys()
+            if not k.startswith("_")
         }
 
-        if bone.name in edit_bone_data:
-            bone_dict.update(edit_bone_data[bone.name])
+        # RNA UI
+        rna_ui = {
+            k: clean_value(pose_bone["_RNA_UI"][k])
+            for k in pose_bone.get("_RNA_UI", {})
+            if k in pose_bone
+        }
 
-        if is_controller_bone(bone.name):
-            controllers[bone.name] = bone_dict
+        # Compose the main bone dictionary
+        bone_dict = {
+            "bone_collections": [
+                col.name for col in getattr(pose_bone.bone, "collections", [])
+            ],
+            "parent": pose_bone.parent.name if pose_bone.parent else None,
+            "children": [
+                child.name
+                for child in pose_bone.children
+                if "twist" not in child.name.lower()
+            ],
+            "bone_color": bone_color,
+            "custom_shape": {
+                "object": shape_obj.name if shape_obj else None,
+                "transform": transform_obj.name if transform_obj else None,
+                "scale_xyz": list(pose_bone.custom_shape_scale_xyz),
+                "translation": list(pose_bone.custom_shape_translation),
+                "wire_width": pose_bone.custom_shape_wire_width,
+                "rotation": list(shape_obj.rotation_euler) if shape_obj else None,
+                "use_bone_size": pose_bone.use_custom_shape_bone_size
+            },
+            "lock": {
+                "location": list(pose_bone.lock_location),
+                "rotation": list(pose_bone.lock_rotation),
+                "rotation_w": pose_bone.lock_rotation_w,
+                "scale": list(pose_bone.lock_scale)
+            },
+            "rotation_mode": pose_bone.rotation_mode,
+            "constraints": constraints,
+            "drivers": drivers,
+            "custom_properties": custom_properties,
+            "rna_ui": rna_ui
+        }
+
+        return bone_dict
+
+    def traverse(pose_bone):
+        """Recursively serialize pose bones and children, skipping stop bones."""
+        if pose_bone.name in visited or pose_bone.name in stop_bones:
+            return
+        visited.add(pose_bone.name)
+
+        shape_obj = pose_bone.custom_shape
+        transform_obj = pose_bone.custom_shape_transform
+
+        bone_dict = serialize_pose_bone(pose_bone, shape_obj, transform_obj)
+
+        # Merge edit bone info
+        if pose_bone.name in edit_bone_data:
+            bone_dict.update(edit_bone_data[pose_bone.name])
+
+        # Sort bones into ue_bones/controllers
+        if is_controller_bone(pose_bone.name):
+            controllers[pose_bone.name] = bone_dict
         else:
-            ue_bones[bone.name] = bone_dict
+            ue_bones[pose_bone.name] = bone_dict
 
-        for child in bone.children:
+        for child in pose_bone.children:
             traverse(child)
 
+    # Traverse from all root bones
     for root in root_bones:
         if root in armature.pose.bones:
             traverse(armature.pose.bones[root])
 
     return {"ue_bones": ue_bones, "controllers": controllers}
+
 
 def export_limb_file(limb_name, chain, armature, output_path):
     from . import armature_registry

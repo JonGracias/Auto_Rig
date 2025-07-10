@@ -32,37 +32,41 @@
                 "upperarm_l"
             ],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -89,37 +93,41 @@
                 "lowerarm_l"
             ],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -146,37 +154,41 @@
                 "hand_l"
             ],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -200,37 +212,41 @@
             "parent": "lowerarm_l",
             "children": [],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -254,37 +270,41 @@
             "parent": "lowerarm_l",
             "children": [],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -314,37 +334,41 @@
                 "ring_metacarpal_l"
             ],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -363,1096 +387,46 @@
                 101.75177001953125
             ]
         },
-        "index_metacarpal_l": {
-            "bone_collections": [],
-            "parent": "hand_l",
-            "children": [
-                "index_01_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                48.13905715942383,
-                -19.700077056884766,
-                103.23075103759766
-            ],
-            "tail": [
-                44.60148620605469,
-                -18.00130271911621,
-                98.84896087646484
-            ]
-        },
-        "index_01_l": {
-            "bone_collections": [],
-            "parent": "index_metacarpal_l",
-            "children": [
-                "index_02_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                50.53190612792969,
-                -23.731523513793945,
-                99.6780014038086
-            ],
-            "tail": [
-                47.65989303588867,
-                -21.493892669677734,
-                97.8365478515625
-            ]
-        },
-        "index_02_l": {
-            "bone_collections": [],
-            "parent": "index_01_l",
-            "children": [
-                "index_03_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                50.99222183227539,
-                -25.938932418823242,
-                96.27772521972656
-            ],
-            "tail": [
-                49.15165328979492,
-                -24.20271110534668,
-                95.70167541503906
-            ]
-        },
-        "index_03_l": {
-            "bone_collections": [],
-            "parent": "index_02_l",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                50.80569839477539,
-                -26.92997932434082,
-                93.8866958618164
-            ],
-            "tail": [
-                49.04929733276367,
-                -25.02024269104004,
-                93.84251403808594
-            ]
-        },
-        "middle_metacarpal_l": {
-            "bone_collections": [],
-            "parent": "hand_l",
-            "children": [
-                "middle_01_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                49.68858337402344,
-                -18.12984848022461,
-                102.91677856445312
-            ],
-            "tail": [
-                45.60165023803711,
-                -17.049423217773438,
-                98.52157592773438
-            ]
-        },
-        "middle_01_l": {
-            "bone_collections": [],
-            "parent": "middle_metacarpal_l",
-            "children": [
-                "middle_02_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                52.645591735839844,
-                -21.97576904296875,
-                99.22176361083984
-            ],
-            "tail": [
-                48.3818473815918,
-                -19.488704681396484,
-                97.68757629394531
-            ]
-        },
-        "middle_02_l": {
-            "bone_collections": [],
-            "parent": "middle_01_l",
-            "children": [
-                "middle_03_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                52.96723175048828,
-                -24.273645401000977,
-                94.60277557373047
-            ],
-            "tail": [
-                51.00453186035156,
-                -22.7706356048584,
-                94.70014190673828
-            ]
-        },
-        "middle_03_l": {
-            "bone_collections": [],
-            "parent": "middle_02_l",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                52.38752365112305,
-                -24.879878997802734,
-                92.27529907226562
-            ],
-            "tail": [
-                50.55530548095703,
-                -23.294431686401367,
-                92.77534484863281
-            ]
-        },
-        "thumb_01_l": {
-            "bone_collections": [],
-            "parent": "hand_l",
-            "children": [
-                "thumb_02_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                46.22671127319336,
-                -18.49582290649414,
-                102.95843505859375
-            ],
-            "tail": [
-                47.79423522949219,
-                -16.872589111328125,
-                99.20677185058594
-            ]
-        },
-        "thumb_02_l": {
-            "bone_collections": [],
-            "parent": "thumb_01_l",
-            "children": [
-                "thumb_03_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                45.190101623535156,
-                -22.22467041015625,
-                100.91194915771484
-            ],
-            "tail": [
-                46.66328048706055,
-                -20.206193923950195,
-                99.1011734008789
-            ]
-        },
-        "thumb_03_l": {
-            "bone_collections": [],
-            "parent": "thumb_02_l",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                45.04893493652344,
-                -24.22552490234375,
-                98.56673431396484
-            ],
-            "tail": [
-                46.52424621582031,
-                -21.890268325805664,
-                97.19071197509766
-            ]
-        },
-        "pinky_metacarpal_l": {
-            "bone_collections": [],
-            "parent": "hand_l",
-            "children": [
-                "pinky_01_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                50.945125579833984,
-                -16.074230194091797,
-                101.9043197631836
-            ],
-            "tail": [
-                46.668941497802734,
-                -16.44251823425293,
-                99.41109466552734
-            ]
-        },
-        "pinky_01_l": {
-            "bone_collections": [],
-            "parent": "pinky_metacarpal_l",
-            "children": [
-                "pinky_02_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                53.53984451293945,
-                -17.628040313720703,
-                97.96849822998047
-            ],
-            "tail": [
-                49.98955535888672,
-                -16.967432022094727,
-                96.73526763916016
-            ]
-        },
-        "pinky_02_l": {
-            "bone_collections": [],
-            "parent": "pinky_01_l",
-            "children": [
-                "pinky_03_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                54.54551696777344,
-                -18.76139259338379,
-                94.46621704101562
-            ],
-            "tail": [
-                52.581844329833984,
-                -18.212364196777344,
-                94.5316390991211
-            ]
-        },
-        "pinky_03_l": {
-            "bone_collections": [],
-            "parent": "pinky_02_l",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                54.35741424560547,
-                -19.197731018066406,
-                92.48229217529297
-            ],
-            "tail": [
-                52.417091369628906,
-                -18.613323211669922,
-                92.71752166748047
-            ]
-        },
-        "ring_metacarpal_l": {
-            "bone_collections": [],
-            "parent": "hand_l",
-            "children": [
-                "ring_01_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                50.33090591430664,
-                -17.132648468017578,
-                102.40469360351562
-            ],
-            "tail": [
-                46.20484161376953,
-                -16.915407180786133,
-                98.55731964111328
-            ]
-        },
-        "ring_01_l": {
-            "bone_collections": [],
-            "parent": "ring_metacarpal_l",
-            "children": [
-                "ring_02_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                53.68851852416992,
-                -19.776769638061523,
-                98.71566009521484
-            ],
-            "tail": [
-                49.29463195800781,
-                -17.99098777770996,
-                97.20719146728516
-            ]
-        },
-        "ring_02_l": {
-            "bone_collections": [],
-            "parent": "ring_01_l",
-            "children": [
-                "ring_03_l"
-            ],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                54.46611404418945,
-                -21.688983917236328,
-                94.1869125366211
-            ],
-            "tail": [
-                52.46003723144531,
-                -20.637603759765625,
-                94.20745086669922
-            ]
-        },
-        "ring_03_l": {
-            "bone_collections": [],
-            "parent": "ring_02_l",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                54.15095138549805,
-                -22.24786949157715,
-                92.01470184326172
-            ],
-            "tail": [
-                52.2207145690918,
-                -21.120872497558594,
-                92.38107299804688
-            ]
-        },
         "upperarm_twist_01_l": {
             "bone_collections": [],
             "parent": "upperarm_l",
             "children": [],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -1476,37 +450,41 @@
             "parent": "upperarm_l",
             "children": [],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -1534,37 +512,41 @@
                 "ik_hand_gun"
             ],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -1592,37 +574,41 @@
                 "ik_hand_r"
             ],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -1647,37 +633,41 @@
             "parent": "ik_hand_gun",
             "children": [],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],

@@ -41,9 +41,11 @@ class AutoRigProperties(bpy.types.PropertyGroup):
     mode: bpy.props.EnumProperty(
         name="Mode",
         items=[
-            ('json', "JSON", ""),
+            ('control', "Control", ""),
+            ('deform', "Deform", ""),
             ('ctrl_from_def', "Deform → Control", ""),
             ('def_from_ctrl', "Control → Deform", ""),
+            ('json', "JSON", ""),
         ]
     ) # type: ignore
     filepath: bpy.props.StringProperty(

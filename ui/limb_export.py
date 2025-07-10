@@ -106,6 +106,6 @@ class AUTORIG_PT_LimbExportPanel(Panel):
         arm = bpy.context.object
         layout.label(text=f"Armature: {arm.name if arm else 'None'}")
         layout.prop(props, "export_limb_name")
-        layout.operator("autorig.export_selected_limb", text="Export Limb to File")
+        layout.operator("autorig.export_selected_limb", text="Copy Limb")
 
 

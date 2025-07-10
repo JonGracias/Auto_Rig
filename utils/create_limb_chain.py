@@ -1,7 +1,7 @@
 import json
 import os
 from typing import Dict, List, Tuple
-from mathutils import Vector  # type: ignore
+from mathutils import Vector, Quaternion, Euler  # type: ignore
 import bpy # type: ignore
 import json
 from pathlib import Path
@@ -106,9 +106,6 @@ def get_source_file_path(armature_name="driver", limb_chain_name="arm_l"):
     scripts_dir = bpy.utils.user_resource('SCRIPTS')
     return Path(scripts_dir) / "addons" / "Auto_Rig" / "Hierarchy" / armature_name / f"{limb_chain_name}.json"
 
-
-
-
 def get_data_from_file(filepath):
     if not os.path.exists(filepath):
         raise FileNotFoundError(f"[ERROR] File not found: {filepath}")
@@ -118,17 +115,36 @@ def get_data_from_file(filepath):
 
     return data
 
+def is_controller_bone(name):
+    lowered = name.lower()
+    return any(prefix in lowered for prefix in ["ik_", "fk_", "mch_", "ctrl_", "helper", "pole", "target", "twist"])
 
-def retarget_ue_bones(source, target):
-    for bone_name in source:
+def getChild(bone):
+    children = bone.get("child")
+    child_name = None
+
+    if isinstance(children, list):
+        for c in children:
+            if not is_controller_bone(c):
+                child_name = c
+                break
+    elif isinstance(children, str):
+        if not is_controller_bone(children):
+            child_name = children
+            
+    return child_name
+
+def retarget_ue_bones(original, target):
+    for bone_name in original:
         if bone_name in target:
-            source[bone_name]["head"] = target[bone_name].get("head")
-            child_name = target[bone_name].get("child")
+            original[bone_name]["head"] = target[bone_name].get("head")
+            child_name = getChild(target[bone_name])
+            print(f"CHILDNAME: {child_name}")
             if child_name and child_name in target:
-                source[bone_name]["tail"] = target[child_name].get("head")
-            else:
-                source[bone_name]["tail"] = [0,0,0]
-    return source
+                original[bone_name]["tail"] = target[child_name].get("head")
+                print(f"CHILD HEAD LOCATION: {target[child_name].get('head')}")
+                print(f"CHILD HEAD LOCATION: {original[bone_name]['tail']}")
+    return original
 
 def scale_and_apply(armature):
     bpy.ops.object.mode_set(mode='OBJECT')
@@ -187,17 +203,19 @@ def get_or_create_armature():
 
     return arm
 
-def main(source_armature_name, limb_chain_name, target_armature_name=None, ):
+def main(source_armature_name, limb_chain_name, retarget_armature_name=None):
     source_file = get_source_file_path(source_armature_name, limb_chain_name)
-    target_file = None
-    if target_armature_name:
-        target_file = get_source_file_path(target_armature_name, limb_chain_name)
+    retarget_file = None
+    if retarget_armature_name:
+        retarget_file = get_source_file_path(retarget_armature_name, limb_chain_name)
     
     source_data = get_data_from_file(source_file)
-    target_data = get_data_from_file(target_file) if target_file else {}
+    retarget_data = get_data_from_file(retarget_file) if retarget_file else {}
 
     ue_bones_data = source_data.get("ue_bones", {})
-    retargeting_bones_data = target_data.get("ue_bones", {})
+    retargeting_bones_data = retarget_data.get("ue_bones", {})
+    if retargeting_bones_data:
+        retarget_ue_bones(source_data, retargeting_bones_data)
     controller_bones_data = source_data.get("controllers", {})
     meta_data = source_data.get("_meta", {})        
     armature  = get_or_create_armature()
@@ -209,12 +227,10 @@ def main(source_armature_name, limb_chain_name, target_armature_name=None, ):
         print("No target bone data.")
     else:
         ue_bones_data = retarget_ue_bones(ue_bones_data, retargeting_bones_data)
-        print(json.dumps(ue_bones_data, indent=4))
+
         
     build_bones_from_json_file(meta_data, ue_bones_data, armature)
     build_bones_from_json_file(meta_data, controller_bones_data, armature)
-
-
 if __name__ == "__main__":
     
     main("driver.01", "arm_l")

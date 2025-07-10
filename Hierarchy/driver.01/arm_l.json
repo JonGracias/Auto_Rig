@@ -13,7 +13,7 @@
                 1.0
             ],
             "dimensions": [
-                2.0196189880371094,
+                1.7728077173233032,
                 1.717008113861084,
                 1.420212984085083
             ]
@@ -34,37 +34,65 @@
                 "mch_arm_length"
             ],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "pose_transform": {
+                "location": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_mode": "QUATERNION",
+                "rotation_quaternion": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_euler": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -92,37 +120,65 @@
                 "lowerarm_l"
             ],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "pose_transform": {
+                "location": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_mode": "QUATERNION",
+                "rotation_quaternion": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_euler": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    0.9999998807907104,
+                    0.9999998807907104,
+                    0.9999998807907104
+                ]
+            },
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [
@@ -175,37 +231,65 @@
                 "hand_l"
             ],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                true,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "pose_transform": {
+                "location": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_mode": "QUATERNION",
+                "rotation_quaternion": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_euler": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0000001192092896,
+                    0.9999999403953552
+                ]
+            },
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    true,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [
                 {
@@ -303,37 +387,65 @@
                 "thumb_01_l"
             ],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                true,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "pose_transform": {
+                "location": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_mode": "QUATERNION",
+                "rotation_quaternion": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_euler": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0000001192092896,
+                    1.0000001192092896,
+                    1.0000001192092896
+                ]
+            },
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    true,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [
                 {
@@ -416,37 +528,65 @@
             "parent": "clavicle_l",
             "children": [],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "pose_transform": {
+                "location": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_mode": "QUATERNION",
+                "rotation_quaternion": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_euler": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [
                 {
@@ -540,37 +680,65 @@
                 "arm_pole_target_r"
             ],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "pose_transform": {
+                "location": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_mode": "QUATERNION",
+                "rotation_quaternion": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_euler": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -596,41 +764,69 @@
             "parent": "ik_hand_root",
             "children": [],
             "bone_color": null,
-            "custom_shape": "Circle",
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                0.5,
-                0.5,
-                0.5
-            ],
-            "custom_shape_translation": [
-                1.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                true,
-                true
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "pose_transform": {
+                "location": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_mode": "QUATERNION",
+                "rotation_quaternion": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_euler": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "custom_shape": {
+                "object": "Circle",
+                "transform": null,
+                "scale_xyz": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "translation": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    true,
+                    true
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -656,41 +852,69 @@
                 "mch_ik_hand_l"
             ],
             "bone_color": null,
-            "custom_shape": "Circle",
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                0.75,
-                0.75,
-                0.75
-            ],
-            "custom_shape_translation": [
-                1.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                true,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "pose_transform": {
+                "location": [
+                    -11.453774452209473,
+                    -4.469042778015137,
+                    -34.74226760864258
+                ],
+                "rotation_mode": "QUATERNION",
+                "rotation_quaternion": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_euler": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "custom_shape": {
+                "object": "Circle",
+                "transform": null,
+                "scale_xyz": [
+                    0.75,
+                    0.75,
+                    0.75
+                ],
+                "translation": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    true,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [],
             "drivers": [],
@@ -727,37 +951,65 @@
             "parent": "ik_hand_l",
             "children": [],
             "bone_color": null,
-            "custom_shape": null,
-            "custom_shape_transform": null,
-            "custom_shape_scale_xyz": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "custom_shape_translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "custom_shape_wire_width": 1.0,
-            "custom_shape_rotation": null,
-            "use_custom_shape_bone_size": true,
-            "lock_location": [
-                false,
-                false,
-                false
-            ],
-            "lock_rotation": [
-                false,
-                true,
-                false
-            ],
-            "lock_rotation_w": false,
-            "lock_scale": [
-                false,
-                false,
-                false
-            ],
+            "pose_transform": {
+                "location": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_mode": "QUATERNION",
+                "rotation_quaternion": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation_euler": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    true,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
             "rotation_mode": "QUATERNION",
             "constraints": [
                 {
