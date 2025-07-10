@@ -207,6 +207,72 @@
                 110.82589721679688
             ]
         },
+        "hand_l": {
+            "bone_collections": [],
+            "parent": "lowerarm_l",
+            "children": [
+                "index_metacarpal_l",
+                "middle_metacarpal_l",
+                "thumb_01_l",
+                "pinky_metacarpal_l",
+                "ring_metacarpal_l"
+            ],
+            "bone_color": null,
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
+            "rotation_mode": "QUATERNION",
+            "constraints": [],
+            "drivers": [],
+            "custom_properties": {
+                "lockInfluenceWeights": true
+            },
+            "rna_ui": {},
+            "head": [
+                47.76859664916992,
+                -15.698895454406738,
+                104.46652221679688
+            ],
+            "tail": [
+                45.330406188964844,
+                -14.723037719726562,
+                101.75177001953125
+            ]
+        }
+    },
+    "controllers": {
         "lowerarm_twist_02_l": {
             "bone_collections": [],
             "parent": "lowerarm_l",
@@ -321,70 +387,6 @@
                 49.66421127319336,
                 4.4241943359375,
                 100.50513458251953
-            ]
-        },
-        "hand_l": {
-            "bone_collections": [],
-            "parent": "lowerarm_l",
-            "children": [
-                "index_metacarpal_l",
-                "middle_metacarpal_l",
-                "thumb_01_l",
-                "pinky_metacarpal_l",
-                "ring_metacarpal_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "rna_ui": {},
-            "head": [
-                47.76859664916992,
-                -15.698895454406738,
-                104.46652221679688
-            ],
-            "tail": [
-                45.330406188964844,
-                -14.723037719726562,
-                101.75177001953125
             ]
         },
         "upperarm_twist_01_l": {
@@ -502,9 +504,7 @@
                 20.603378295898438,
                 127.5008773803711
             ]
-        }
-    },
-    "controllers": {
+        },
         "ik_hand_root": {
             "bone_collections": [],
             "parent": null,

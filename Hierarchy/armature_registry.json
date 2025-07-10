@@ -1,28 +1,14 @@
 [
     {
-        "name": "driver",
-        "created": "2025-06-23",
-        "notes": "Primary rig for testing arm_l.json",
-        "is_deform": false,
-        "path": "C:/Users/jon/AppData/Roaming/Blender Foundation/Blender/4.4/scripts/addons/Auto_Rig/Hierarchy/driver"
-    },
-    {
-        "name": "root.003",
-        "created": "2025-06-26",
-        "is_deform": true,
-        "notes": "Auto-added from export_clean_data",
-        "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\root.003"
-    },
-    {
         "name": "driver.01",
-        "created": "2025-06-26",
+        "created": "2025-07-10",
         "is_deform": false,
         "notes": "Auto-added from export_clean_data",
         "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\driver.01"
     },
     {
         "name": "root.001",
-        "created": "2025-06-30",
+        "created": "2025-07-10",
         "is_deform": true,
         "notes": "Auto-added from export_clean_data",
         "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\root.001"

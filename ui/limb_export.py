@@ -2,7 +2,7 @@ import bpy # type: ignore
 import os
 import json
 from bpy.types import Panel, Operator, PropertyGroup # type: ignore
-from bpy.props import EnumProperty, PointerProperty # type: ignore
+from bpy.props import EnumProperty, BoolProperty # type: ignore
 
 from ..utils import export_clean_data
 
@@ -48,6 +48,12 @@ class AutoRigLimbExportProperties(PropertyGroup):
         description="Choose a limb chain to export",
         items=get_limb_names_for_selected_armature
     ) # type: ignore
+    is_deform: BoolProperty(
+        name="Is Deform",
+        description="Make Deform",
+        default=True
+    ) # type: ignore
+
 
 
 class AUTORIG_OT_ExportSelectedLimb(Operator):
@@ -85,7 +91,8 @@ class AUTORIG_OT_ExportSelectedLimb(Operator):
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         
         chain = (limb["roots"], limb["stops"])
-        export_clean_data.export_limb_file(limb_name, chain, armature, output_path)
+        is_deform = props.is_deform 
+        export_clean_data.export_limb_file(limb_name, chain, armature, output_path, is_deform)
 
         self.report({'INFO'}, f"Exported: {output_path}")
         return {'FINISHED'}
@@ -106,6 +113,7 @@ class AUTORIG_PT_LimbExportPanel(Panel):
         arm = bpy.context.object
         layout.label(text=f"Armature: {arm.name if arm else 'None'}")
         layout.prop(props, "export_limb_name")
+        layout.prop(props, "is_deform")
         layout.operator("autorig.export_selected_limb", text="Copy Limb")
 
 

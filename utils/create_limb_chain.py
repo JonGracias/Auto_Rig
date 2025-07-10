@@ -120,7 +120,9 @@ def is_controller_bone(name):
     return any(prefix in lowered for prefix in ["ik_", "fk_", "mch_", "ctrl_", "helper", "pole", "target", "twist"])
 
 def getChild(bone):
-    children = bone.get("child")
+    print(f"[DEBUG] bone keys: {list(bone.keys())}")
+    children = bone.get("children")
+    print(f"[DEBUG] bone.get('children') for bone: {bone.get('name', '<no name>')} => {children}")
     child_name = None
 
     if isinstance(children, list):
@@ -203,7 +205,17 @@ def get_or_create_armature():
 
     return arm
 
+def is_deform_armature(armature_name):
+    scripts_dir = bpy.utils.user_resource('SCRIPTS')
+    registry_file = os.path.join(scripts_dir, "addons", "Auto_Rig", "Hierarchy", "armature_registry.json")
+    registry_data = get_data_from_file(registry_file)
+    for entry in registry_data:
+        if entry.get("name") == armature_name:
+            return entry.get("is_deform", False)
+    return False
+
 def main(source_armature_name, limb_chain_name, retarget_armature_name=None):
+    is_deform = is_deform_armature(source_armature_name)
     source_file = get_source_file_path(source_armature_name, limb_chain_name)
     retarget_file = None
     if retarget_armature_name:
@@ -211,11 +223,17 @@ def main(source_armature_name, limb_chain_name, retarget_armature_name=None):
     
     source_data = get_data_from_file(source_file)
     retarget_data = get_data_from_file(retarget_file) if retarget_file else {}
-
     ue_bones_data = source_data.get("ue_bones", {})
     retargeting_bones_data = retarget_data.get("ue_bones", {})
+    
     if retargeting_bones_data:
-        retarget_ue_bones(source_data, retargeting_bones_data)
+        if is_deform:
+            print("RETARGETING A DEFORM ARMATURE")
+            retarget_ue_bones(source_data, retargeting_bones_data)
+        else:
+            print("RETARGETING A CONTROL ARMATURE")
+            retarget_ue_bones(source_data, retargeting_bones_data)
+            
     controller_bones_data = source_data.get("controllers", {})
     meta_data = source_data.get("_meta", {})        
     armature  = get_or_create_armature()

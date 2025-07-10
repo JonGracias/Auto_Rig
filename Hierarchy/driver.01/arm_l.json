@@ -13,7 +13,7 @@
                 1.0
             ],
             "dimensions": [
-                1.7728077173233032,
+                2.0196189880371094,
                 1.717008113861084,
                 1.420212984085083
             ]
@@ -34,30 +34,6 @@
                 "mch_arm_length"
             ],
             "bone_color": null,
-            "pose_transform": {
-                "location": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_mode": "QUATERNION",
-                "rotation_quaternion": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_euler": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            },
             "custom_shape": {
                 "object": null,
                 "transform": null,
@@ -120,30 +96,6 @@
                 "lowerarm_l"
             ],
             "bone_color": null,
-            "pose_transform": {
-                "location": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_mode": "QUATERNION",
-                "rotation_quaternion": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_euler": [
-                    0.0,
-                    -0.0,
-                    0.0
-                ],
-                "scale": [
-                    0.9999998807907104,
-                    0.9999998807907104,
-                    0.9999998807907104
-                ]
-            },
             "custom_shape": {
                 "object": null,
                 "transform": null,
@@ -231,30 +183,6 @@
                 "hand_l"
             ],
             "bone_color": null,
-            "pose_transform": {
-                "location": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_mode": "QUATERNION",
-                "rotation_quaternion": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_euler": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "scale": [
-                    1.0,
-                    1.0000001192092896,
-                    0.9999999403953552
-                ]
-            },
             "custom_shape": {
                 "object": null,
                 "transform": null,
@@ -387,30 +315,6 @@
                 "thumb_01_l"
             ],
             "bone_color": null,
-            "pose_transform": {
-                "location": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_mode": "QUATERNION",
-                "rotation_quaternion": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_euler": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "scale": [
-                    1.0000001192092896,
-                    1.0000001192092896,
-                    1.0000001192092896
-                ]
-            },
             "custom_shape": {
                 "object": null,
                 "transform": null,
@@ -528,30 +432,6 @@
             "parent": "clavicle_l",
             "children": [],
             "bone_color": null,
-            "pose_transform": {
-                "location": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_mode": "QUATERNION",
-                "rotation_quaternion": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_euler": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            },
             "custom_shape": {
                 "object": null,
                 "transform": null,
@@ -680,30 +560,6 @@
                 "arm_pole_target_r"
             ],
             "bone_color": null,
-            "pose_transform": {
-                "location": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_mode": "QUATERNION",
-                "rotation_quaternion": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_euler": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            },
             "custom_shape": {
                 "object": null,
                 "transform": null,
@@ -764,30 +620,6 @@
             "parent": "ik_hand_root",
             "children": [],
             "bone_color": null,
-            "pose_transform": {
-                "location": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_mode": "QUATERNION",
-                "rotation_quaternion": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_euler": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            },
             "custom_shape": {
                 "object": "Circle",
                 "transform": null,
@@ -852,30 +684,6 @@
                 "mch_ik_hand_l"
             ],
             "bone_color": null,
-            "pose_transform": {
-                "location": [
-                    -11.453774452209473,
-                    -4.469042778015137,
-                    -34.74226760864258
-                ],
-                "rotation_mode": "QUATERNION",
-                "rotation_quaternion": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_euler": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            },
             "custom_shape": {
                 "object": "Circle",
                 "transform": null,
@@ -951,30 +759,6 @@
             "parent": "ik_hand_l",
             "children": [],
             "bone_color": null,
-            "pose_transform": {
-                "location": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_mode": "QUATERNION",
-                "rotation_quaternion": [
-                    1.0,
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "rotation_euler": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "scale": [
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            },
             "custom_shape": {
                 "object": null,
                 "transform": null,

@@ -194,7 +194,7 @@ def serialize_bone_data(chain, armature):
     return {"ue_bones": ue_bones, "controllers": controllers}
 
 
-def export_limb_file(limb_name, chain, armature, output_path):
+def export_limb_file(limb_name, chain, armature, output_path, is_deform=False,):
     from . import armature_registry
     
     obj_name = f'{limb_name}_{armature.name}'
@@ -210,7 +210,6 @@ def export_limb_file(limb_name, chain, armature, output_path):
 
     # Add to registry
     full_path = os.path.abspath(os.path.dirname(output_path))
-    is_deform = "deform" in armature.name.lower()
     armature_registry.create_or_update_entry(
         name=armature.name,
         path=full_path,
