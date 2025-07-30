@@ -23,15 +23,18 @@ importlib.reload(limb_creator)
 classes = [
     control_pane.AUTORIG_PT_ControlRig,
     deform_pane.AUTORIG_PT_DeformRig,
+    
+    limb_creator.LIMB_OT_Build,
+    limb_creator.LIMB_PT_Builder,
+    
     limb_editor.AutoRigLimbEditorProperties,
     limb_editor.AUTORIG_OT_SaveLimbChain,
     limb_editor.AUTORIG_PT_LimbChainEditor,
+    
     limb_export.AutoRigLimbExportProperties,
     limb_export.AUTORIG_OT_ExportSelectedLimb,
     limb_export.AUTORIG_PT_LimbExportPanel,
-    limb_creator.LIMB_OT_Build,
-    limb_creator.LIMB_PT_Builder,
-    limb_pane.AUTORIG_PT_LimbRig,
+    
 ]
 
 def register():
