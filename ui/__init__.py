@@ -21,17 +21,20 @@ importlib.reload(limb_creator)
 
 # --------- Register/Unregister ---------
 classes = [
+    # Saved Armatures
     control_pane.AUTORIG_PT_ControlRig,
     deform_pane.AUTORIG_PT_DeformRig,
+    # Create an Armature
+    limb_creator.LIMB_OT_Build,
+    limb_creator.LIMB_PT_Builder,
+    # Edit or create a Limb Chain
     limb_editor.AutoRigLimbEditorProperties,
     limb_editor.AUTORIG_OT_SaveLimbChain,
     limb_editor.AUTORIG_PT_LimbChainEditor,
+    # Save Limb Chain for Armature
     limb_export.AutoRigLimbExportProperties,
     limb_export.AUTORIG_OT_ExportSelectedLimb,
     limb_export.AUTORIG_PT_LimbExportPanel,
-    limb_creator.LIMB_OT_Build,
-    limb_creator.LIMB_PT_Builder,
-    limb_pane.AUTORIG_PT_LimbRig,
 ]
 
 def register():

@@ -6,31 +6,31 @@ import bpy # type: ignore
 import json
 from pathlib import Path
 
+SCALE = 0.01  # Or whatever you need
 def vector_sub(a, b):
     return [a[i] - b[i] for i in range(3)]
-
 def vector_add(a, b):
     return [a[i] + b[i] for i in range(3)]
-
 def vector_cross(a, b):
     return [
         a[1]*b[2] - a[2]*b[1],
         a[2]*b[0] - a[0]*b[2],
         a[0]*b[1] - a[1]*b[0]
     ]
-
 def rotate_vector_90(v, direction='left'):
     if direction == 'left':
         return [-v[1], v[0], v[2]]
     else:
         return [v[1], -v[0], v[2]]
-
 def determine_turn(x_prev, x_curr, y_curr):
     a = vector_sub(x_curr, x_prev)
     b = vector_sub(y_curr, x_curr)
     cross_z = vector_cross(a, b)[2]
     return 'left' if cross_z > 0 else 'right'
+def scale_vector(vec, scale):
+    return [x * scale for x in vec]
 
+#-----------------------------------------------------------------------------------------------#
 def build_segment_dict_from_json(json_path: str) -> Dict[str, Tuple[List[float], List[float]]]:
     with open(json_path, 'r') as f:
         data = json.load(f)
@@ -69,11 +69,6 @@ def create_bone_in_edit_mode(armature, bone_name, head, tail):
     bone.tail = tail
 
     return bone
-
-SCALE = 0.01  # Or whatever you need
-
-def scale_vector(vec, scale):
-    return [x * scale for x in vec]
 
 def build_bones_from_json_file(meta, bone_dict, armature):
     """ 
