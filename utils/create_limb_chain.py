@@ -7,6 +7,9 @@ import json
 from pathlib import Path
 
 SCALE = 0.01  # Or whatever you need
+
+#-------------------------------------Translation Functions-------------------------------------#
+
 def vector_sub(a, b):
     return [a[i] - b[i] for i in range(3)]
 def vector_add(a, b):
@@ -31,30 +34,6 @@ def scale_vector(vec, scale):
     return [x * scale for x in vec]
 
 #-----------------------------------------------------------------------------------------------#
-def build_segment_dict_from_json(json_path: str) -> Dict[str, Tuple[List[float], List[float]]]:
-    with open(json_path, 'r') as f:
-        data = json.load(f)
-
-    # Filter to just bones, ignore metadata or other entries
-    bones = {k: v for k, v in data.items() if not k.startswith('_') and 'head' in v}
-
-    # Make a list of (bone_name, head) in original JSON order
-    chain = [(name, attrs["head"]) for name, attrs in bones.items()]
-
-    segment_dict = {}
-    for i in range(len(chain) - 1):
-        name1, head1 = chain[i]
-        _, head2 = chain[i + 1]
-        segment_dict[name1] = (head1, head2)
-
-    # Optional: handle final bone using its tail
-    last_name, last_head = chain[-1]
-    last_tail = bones[last_name].get("tail")
-    if last_tail:
-        segment_dict[last_name] = (last_head, last_tail)
-
-    return segment_dict
-
 
 def create_bone_in_edit_mode(armature, bone_name, head, tail):
     bpy.ops.object.mode_set(mode='EDIT')
@@ -71,8 +50,33 @@ def create_bone_in_edit_mode(armature, bone_name, head, tail):
     return bone
 
 def build_bones_from_json_file(meta, bone_dict, armature):
-    """ 
+    """
+    Builds an armature from a JSON bone dictionary.
+
+    This function creates bones inside the provided `armature` based on data from `bone_dict`.
+    The process happens in two passes:
+
+    Pass 1: Creation
+    - Iterates over each bone entry in `bone_dict`.
+    - Scales the head and tail coordinates using the global `SCALE` factor.
+    - Calls a helper function `create_bone_in_edit_mode()` to generate bones in EDIT mode.
+
+    Pass 2: Parenting
+    - Loops through the bones again to assign parents, if specified.
+    - Verifies both the child and parent bones exist before assigning parenting.
+    - Logs skipped assignments if the parent is missing (helpful for debugging).
+
+    Args:
+        meta (dict): Optional metadata (not used directly here).
+        bone_dict (dict): Dictionary where each key is a bone name and the value is a dict
+                          containing at minimum 'head', 'tail', and optionally 'parent'.
+        armature (Object): The Blender Armature object to modify.
     
+    Raises:
+        ValueError: If `armature` is missing or not of type 'ARMATURE'.
+
+    Note:
+        This function assumes that `SCALE` and `scale_vector()` are defined in the current scope.
     """
     if not armature or armature.type != 'ARMATURE':
         raise ValueError("Armature not found or invalid")
@@ -130,29 +134,6 @@ def getChild(bone):
             child_name = children
             
     return child_name
-
-def retarget_ue_bones(original, target):
-    for bone_name in original:
-        if bone_name in target:
-            original[bone_name]["head"] = target[bone_name].get("head")
-            child_name = getChild(target[bone_name])
-            print(f"CHILDNAME: {child_name}")
-            if child_name and child_name in target:
-                original[bone_name]["tail"] = target[child_name].get("head")
-                print(f"CHILD HEAD LOCATION: {target[child_name].get('head')}")
-                print(f"CHILD HEAD LOCATION: {original[bone_name]['tail']}")
-    return original
-
-def scale_and_apply(armature):
-    bpy.ops.object.mode_set(mode='OBJECT')
-        
-    # Scale the armature
-    armature.scale = (0.01, 0.01, 0.01)
-    bpy.context.view_layer.update()
-
-    # Apply the scale
-    bpy.context.view_layer.objects.active = armature
-    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
     
 def apply_global_transform(armature, meta_data):
     transform = meta_data.get("transform", {})
@@ -209,41 +190,80 @@ def is_deform_armature(armature_name):
             return entry.get("is_deform", False)
     return False
 
+def retarget_ue_bones(original, target):
+    for bone_name in original:
+        if bone_name in target:
+            original[bone_name]["head"] = target[bone_name].get("head")
+            child_name = getChild(target[bone_name])
+            print(f"CHILDNAME: {child_name}")
+            if child_name and child_name in target:
+                original[bone_name]["tail"] = target[child_name].get("head")
+                print(f"CHILD HEAD LOCATION: {target[child_name].get('head')}")
+                print(f"CHILD HEAD LOCATION: {original[bone_name]['tail']}")
+    return original
+
 def main(source_armature_name, limb_chain_name, retarget_armature_name=None):
+    """
+    Main entry point for building an armature from saved JSON data.
+
+    This function:
+    - Determines whether the source armature is a deform or control rig.
+    - Loads bone data (UE bones and controllers) from a JSON file.
+    - Optionally retargets the source bones using another armature’s bone data.
+    - Applies global transform metadata to the active armature.
+    - Builds the armature by creating both UE bones and controller/helper bones.
+
+    Args:
+        source_armature_name (str): Name of the source armature (usually already in the scene).
+        limb_chain_name (str): Name of the bone group or chain being processed (used in file lookup).
+        retarget_armature_name (str, optional): If provided, bone positions will be retargeted
+                                                from this armature instead.
+    """
+    # Check if the source armature is a deform rig
     is_deform = is_deform_armature(source_armature_name)
+
+    # Locate file paths for the source and (optionally) retarget data
     source_file = get_source_file_path(source_armature_name, limb_chain_name)
     retarget_file = None
     if retarget_armature_name:
         retarget_file = get_source_file_path(retarget_armature_name, limb_chain_name)
-    
+
+    # Load JSON bone data from files
     source_data = get_data_from_file(source_file)
     retarget_data = get_data_from_file(retarget_file) if retarget_file else {}
+
+    # Extract UE bone data (main bones) and optional retarget bones
     ue_bones_data = source_data.get("ue_bones", {})
     retargeting_bones_data = retarget_data.get("ue_bones", {})
-    
+
+    # If retarget data is available, use it to overwrite positions in source UE bones
     if retargeting_bones_data:
         if is_deform:
             print("RETARGETING A DEFORM ARMATURE")
-            retarget_ue_bones(source_data, retargeting_bones_data)
         else:
             print("RETARGETING A CONTROL ARMATURE")
-            retarget_ue_bones(source_data, retargeting_bones_data)
-            
+        retarget_ue_bones(source_data, retargeting_bones_data)
+
+    # Get controller/helper bone data and armature metadata
     controller_bones_data = source_data.get("controllers", {})
-    meta_data = source_data.get("_meta", {})        
-    armature  = get_or_create_armature()
+    meta_data = source_data.get("_meta", {})
+
+    # Create or retrieve the working armature, and apply its global transform
+    armature = get_or_create_armature()
     apply_global_transform(armature, meta_data)
 
+    # Basic error handling for missing data
     if not ue_bones_data:
         print("No source bone data.")
     elif not retargeting_bones_data:
         print("No target bone data.")
     else:
+        # Apply retargeting override (note: this might be a duplicate retarget, consider revising)
         ue_bones_data = retarget_ue_bones(ue_bones_data, retargeting_bones_data)
 
-        
+    # Build the UE bones and controller/helper bones into the armature
     build_bones_from_json_file(meta_data, ue_bones_data, armature)
     build_bones_from_json_file(meta_data, controller_bones_data, armature)
-if __name__ == "__main__":
     
+if __name__ == "__main__":
     main("driver.01", "arm_l")

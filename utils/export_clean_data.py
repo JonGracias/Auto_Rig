@@ -204,7 +204,6 @@ def export_limb_file(limb_name, chain, armature, output_path, is_deform=False,):
         "ue_bones": bone_data["ue_bones"],
         "controllers": bone_data["controllers"]
     }
-
     with open(output_path, "w") as f:
         json.dump(data, f, indent=4)
 
@@ -216,7 +215,6 @@ def export_limb_file(limb_name, chain, armature, output_path, is_deform=False,):
         is_deform=is_deform,
         notes="Auto-added from export_clean_data"
     )
-
     print(f"Exported: {output_path}")
     return output_path
 
@@ -261,6 +259,5 @@ def main(limb_index):
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
     export_limb_file(limb, chain, armature, output_path)
-
 if __name__ == "__main__":
     main(2)  # change index for other limbs
