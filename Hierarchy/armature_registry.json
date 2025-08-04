@@ -12,5 +12,19 @@
         "is_deform": true,
         "notes": "Auto-added from export_clean_data",
         "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\root.001"
+    },
+    {
+        "name": "control_deform",
+        "created": "2025-08-02",
+        "is_deform": true,
+        "notes": "Auto-added from export_clean_data",
+        "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\control_deform"
+    },
+    {
+        "name": "root",
+        "created": "2025-08-02",
+        "is_deform": true,
+        "notes": "Auto-added from export_clean_data",
+        "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\root"
     }
 ]

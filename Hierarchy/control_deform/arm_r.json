@@ -1,0 +1,143 @@
+{
+    "_meta": {
+        "name": "arm_r_control_deform",
+        "transform": {
+            "location": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "dimensions": [
+                1.4655472040176392,
+                1.4397763013839722,
+                1.3879895210266113
+            ]
+        },
+        "custom_properties": {},
+        "rna_ui": {}
+    },
+    "ue_bones": {},
+    "controllers": {
+        "ik_hand_root": {
+            "bone_collections": [],
+            "parent": null,
+            "children": [
+                "ik_hand_gun"
+            ],
+            "bone_color": null,
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
+            "rotation_mode": "QUATERNION",
+            "constraints": [],
+            "drivers": [],
+            "custom_properties": {},
+            "rna_ui": {},
+            "head": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "tail": [
+                0.0,
+                1.1593748331069946,
+                0.0
+            ]
+        },
+        "ik_hand_gun": {
+            "bone_collections": [],
+            "parent": "ik_hand_root",
+            "children": [
+                "ik_hand_l"
+            ],
+            "bone_color": null,
+            "custom_shape": {
+                "object": null,
+                "transform": null,
+                "scale_xyz": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "wire_width": 1.0,
+                "rotation": null,
+                "use_bone_size": true
+            },
+            "lock": {
+                "location": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation": [
+                    false,
+                    false,
+                    false
+                ],
+                "rotation_w": false,
+                "scale": [
+                    false,
+                    false,
+                    false
+                ]
+            },
+            "rotation_mode": "QUATERNION",
+            "constraints": [],
+            "drivers": [],
+            "custom_properties": {},
+            "rna_ui": {},
+            "head": [
+                -0.4776831865310669,
+                -0.15698805451393127,
+                1.0446642637252808
+            ],
+            "tail": [
+                -0.786033034324646,
+                -0.28040146827697754,
+                1.3879895210266113
+            ]
+        }
+    }
+}
