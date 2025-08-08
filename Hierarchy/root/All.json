@@ -14,7 +14,7 @@
             ],
             "dimensions": [
                 1.9127815961837769,
-                0.3358090817928314,
+                1.3427462577819824,
                 1.7105731964111328
             ]
         },
@@ -30,7 +30,7 @@
             ],
             "parent": null,
             "children": [
-                "spine_01",
+                "spine_",
                 "thigh_r",
                 "thigh_l"
             ],
@@ -105,13 +105,13 @@
                 72.72991180419922
             ]
         },
-        "spine_01": {
+        "spine_": {
             "bone_collections": [
                 "Deform"
             ],
             "parent": "pelvis",
             "children": [
-                "spine_02"
+                "spine_.001"
             ],
             "bone_color": null,
             "custom_shape": {
@@ -184,13 +184,13 @@
                 78.28866577148438
             ]
         },
-        "spine_02": {
+        "spine_.001": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_01",
+            "parent": "spine_",
             "children": [
-                "spine_03"
+                "spine_.002"
             ],
             "bone_color": null,
             "custom_shape": {
@@ -263,13 +263,13 @@
                 83.87401580810547
             ]
         },
-        "spine_03": {
+        "spine_.002": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_02",
+            "parent": "spine_.001",
             "children": [
-                "spine_04"
+                "spine_.003"
             ],
             "bone_color": null,
             "custom_shape": {
@@ -342,13 +342,13 @@
                 89.76905059814453
             ]
         },
-        "spine_04": {
+        "spine_.003": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_03",
+            "parent": "spine_.002",
             "children": [
-                "spine_05"
+                "spine_.004"
             ],
             "bone_color": null,
             "custom_shape": {
@@ -421,13 +421,13 @@
                 96.43424224853516
             ]
         },
-        "spine_05": {
+        "spine_.004": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_04",
+            "parent": "spine_.003",
             "children": [
-                "neck_01",
+                "neck_",
                 "clavicle_l",
                 "clavicle_r"
             ],
@@ -503,13 +503,13 @@
                 107.80589294433594
             ]
         },
-        "neck_01": {
+        "neck_": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_05",
+            "parent": "spine_.004",
             "children": [
-                "neck_02"
+                "neck_.001"
             ],
             "bone_color": null,
             "custom_shape": {
@@ -582,11 +582,11 @@
                 123.82938385009766
             ]
         },
-        "neck_02": {
+        "neck_.001": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "neck_01",
+            "parent": "neck_",
             "children": [
                 "head"
             ],
@@ -665,7 +665,7 @@
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "neck_02",
+            "parent": "neck_.001",
             "children": [],
             "bone_color": null,
             "custom_shape": {
@@ -742,7 +742,7 @@
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_05",
+            "parent": "spine_.004",
             "children": [
                 "upperarm_l"
             ],
@@ -2575,7 +2575,7 @@
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_05",
+            "parent": "spine_.004",
             "children": [
                 "upperarm_r"
             ],

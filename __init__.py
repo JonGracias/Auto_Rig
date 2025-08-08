@@ -2,7 +2,7 @@ bl_info = {
     "name": "Auto Rig System",
     "author": "Jonatan Gracias",
     "version": (1, 0, 0),
-    "blender": (3, 0, 0),
+    "blender": (4, 4, 0),
     "location": "3D View > Sidebar > Auto Rig",
     "description": "Modular auto-rigging panel for Blender",
     "category": "Rigging",
