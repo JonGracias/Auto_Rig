@@ -1,7 +1,6 @@
-import bpy # type: ignore
+import bpy  # type: ignore
 import json
 import os
-
 
 def clean_value(value):
     if isinstance(value, (int, float, str, bool, type(None))):
@@ -21,7 +20,7 @@ def serialize_object_metadata(obj_name, obj):
         "name": obj_name,
         "transform": {},
         "custom_properties": {},
-        "rna_ui": {}
+        # "rna_ui": {}  # Remove if not needed
     }
     for attr in ("location", "scale", "dimensions"):
         try:
@@ -30,9 +29,7 @@ def serialize_object_metadata(obj_name, obj):
             data["transform"][attr] = f"[ERROR] {e}"
 
     for key in obj.keys():
-        if key == "_RNA_UI":
-            data["rna_ui"] = {k: clean_value(v) for k, v in obj["_RNA_UI"].items()}
-        elif not key.startswith("_"):
+        if not key.startswith("_"):
             data["custom_properties"][key] = clean_value(obj[key])
 
     return data
@@ -45,20 +42,32 @@ def serialize_driver(driver):
             {
                 "name": var.name,
                 "type": var.type,
-                "target_id": var.targets[0].id.name if var.targets else None,
-                "data_path": var.targets[0].data_path if var.targets else None
+                "target_id": (
+                    var.targets[0].id.name if (var.targets and var.targets[0].id is not None) else None
+                ),
+                "data_path": var.targets[0].data_path if (var.targets and var.targets[0].id is not None) else None
             }
             for var in driver.driver.variables
         ]
     }
 
 def serialize_constraint(constraint):
-    d = {"name": constraint.name, "type": constraint.type}
+    blocklist = {
+        "bl_rna", "rna_type", "is_valid", "is_override_data", "error_location",
+        "error_rotation", "show_expanded", "name", "type"
+    }
+    d = {"type": constraint.type}
     for attr in dir(constraint):
-        if not attr.startswith("_") and not callable(getattr(constraint, attr)):
+        if (
+            not attr.startswith("_")
+            and not callable(getattr(constraint, attr))
+            and attr not in blocklist
+        ):
             try:
-                d[attr] = clean_value(getattr(constraint, attr))
-            except:
+                value = getattr(constraint, attr)
+                d[attr] = clean_value(value)
+            except Exception as e:
+                print(f"Failed to serialize constraint attr '{attr}': {e}")
                 continue
     return d
 
@@ -67,14 +76,10 @@ def is_controller_bone(name):
     return any(prefix in lowered for prefix in ["ik_", "fk_", "mch_", "ctrl_", "helper", "pole", "target", "twist"])
 
 def serialize_bone_data(chain, armature):
-    """Serialize bone and controller data from an armature limb chain."""
-
-    # Unpack chain definition
     root_bones, stop_bones = chain
     ue_bones = {}
     controllers = {}
 
-    # Ensure correct mode and gather edit bone data
     bpy.context.view_layer.objects.active = armature
     bpy.ops.object.mode_set(mode='EDIT')
     ebones = armature.data.edit_bones
@@ -82,13 +87,10 @@ def serialize_bone_data(chain, armature):
         eb.name: {"head": list(eb.head), "tail": list(eb.tail)} for eb in ebones
     }
 
-    # Switch to pose mode for extracting pose transforms
     bpy.ops.object.mode_set(mode='POSE')
     visited = set()
 
     def serialize_pose_bone(pose_bone, shape_obj, transform_obj):
-        """Serialize a single pose bone's data into a dictionary."""
-        # Bone color data
         bone_color = (
             {
                 "palette": pose_bone.bone_color.palette,
@@ -102,31 +104,20 @@ def serialize_bone_data(chain, armature):
             else None
         )
 
-        # Constraints data
         constraints = [serialize_constraint(c) for c in pose_bone.constraints]
 
-        # Drivers data
         drivers = []
         if armature.animation_data:
             for d in armature.animation_data.drivers:
                 if d.data_path.startswith(f'pose.bones["{pose_bone.name}"]'):
                     drivers.append(serialize_driver(d))
 
-        # Custom properties
         custom_properties = {
             k: clean_value(pose_bone[k])
             for k in pose_bone.keys()
             if not k.startswith("_")
         }
 
-        # RNA UI
-        rna_ui = {
-            k: clean_value(pose_bone["_RNA_UI"][k])
-            for k in pose_bone.get("_RNA_UI", {})
-            if k in pose_bone
-        }
-
-        # Compose the main bone dictionary
         bone_dict = {
             "bone_collections": [
                 col.name for col in getattr(pose_bone.bone, "collections", [])
@@ -156,14 +147,11 @@ def serialize_bone_data(chain, armature):
             "rotation_mode": pose_bone.rotation_mode,
             "constraints": constraints,
             "drivers": drivers,
-            "custom_properties": custom_properties,
-            "rna_ui": rna_ui
+            "custom_properties": custom_properties
         }
-
         return bone_dict
 
     def traverse(pose_bone):
-        """Recursively serialize pose bones and children, skipping stop bones."""
         if pose_bone.name in visited or pose_bone.name in stop_bones:
             return
         visited.add(pose_bone.name)
@@ -173,11 +161,9 @@ def serialize_bone_data(chain, armature):
 
         bone_dict = serialize_pose_bone(pose_bone, shape_obj, transform_obj)
 
-        # Merge edit bone info
         if pose_bone.name in edit_bone_data:
             bone_dict.update(edit_bone_data[pose_bone.name])
 
-        # Sort bones into ue_bones/controllers
         if is_controller_bone(pose_bone.name):
             controllers[pose_bone.name] = bone_dict
         else:
@@ -186,17 +172,15 @@ def serialize_bone_data(chain, armature):
         for child in pose_bone.children:
             traverse(child)
 
-    # Traverse from all root bones
     for root in root_bones:
         if root in armature.pose.bones:
             traverse(armature.pose.bones[root])
 
     return {"ue_bones": ue_bones, "controllers": controllers}
 
-
-def export_limb_file(limb_name, chain, armature, output_path, is_deform=False,):
+def export_limb_file(limb_name, chain, armature, output_path, is_deform=False):
     from . import armature_registry
-    
+
     obj_name = f'{limb_name}_{armature.name}'
     bone_data = serialize_bone_data(chain, armature)
     data = {
@@ -217,7 +201,6 @@ def export_limb_file(limb_name, chain, armature, output_path, is_deform=False,):
     )
     print(f"Exported: {output_path}")
     return output_path
-
 
 def main(limb_index):
     limbs = ["base", "spine", "arm_l_target", "arm_r", "leg_l", "leg_r"]
@@ -241,16 +224,9 @@ def main(limb_index):
 
     limb = limbs[limb_index]
     chain = chains[limb_index]
-    data = {
-        "_meta": serialize_object_metadata(armature),
-        **serialize_bone_data(chain, armature)
-    }
-    # Output file path
-    # Get the directory of the current file
     current_dir = os.path.dirname(__file__)
     print(f"Current Directory: {current_dir}")
 
-    # Move up to Hero/, then into Hierarchy/, then into armature folder
     base_path = os.path.normpath(
         os.path.join(current_dir, '..', 'Hierarchy', armature.name)
     )
@@ -259,5 +235,6 @@ def main(limb_index):
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
     export_limb_file(limb, chain, armature, output_path)
+
 if __name__ == "__main__":
-    main(2)  # change index for other limbs
+    main(2)  # Change index for other limbs

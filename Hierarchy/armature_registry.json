@@ -26,5 +26,19 @@
         "is_deform": true,
         "notes": "Auto-added from export_clean_data",
         "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\root"
+    },
+    {
+        "name": "driver",
+        "created": "2025-08-05",
+        "is_deform": false,
+        "notes": "Auto-added from export_clean_data",
+        "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\driver"
+    },
+    {
+        "name": "armature",
+        "created": "2025-08-07",
+        "is_deform": false,
+        "notes": "Auto-added from export_clean_data",
+        "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\armature"
     }
 ]

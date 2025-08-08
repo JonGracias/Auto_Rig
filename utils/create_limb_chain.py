@@ -6,7 +6,7 @@ import bpy # type: ignore
 import json
 from pathlib import Path
 
-SCALE = 0.01  # Or whatever you need
+SCALE = 1  # Or whatever you need
 
 #-------------------------------------Translation Functions-------------------------------------#
 
@@ -190,7 +190,7 @@ def is_deform_armature(armature_name):
             return entry.get("is_deform", False)
     return False
 
-def retarget_ue_bones(original, target):
+def retarget_control_bones(original, target):
     for bone_name in original:
         if bone_name in target:
             original[bone_name]["head"] = target[bone_name].get("head")
@@ -202,68 +202,147 @@ def retarget_ue_bones(original, target):
                 print(f"CHILD HEAD LOCATION: {original[bone_name]['tail']}")
     return original
 
-def main(source_armature_name, limb_chain_name, retarget_armature_name=None):
-    """
-    Main entry point for building an armature from saved JSON data.
+def retarget_deform_bones(original, target):
+    # Later: Simply copy bone layout — already control-driven.
+    print("Performing deform → control retargeting")
+    return retarget_control_bones(original, target)
 
-    This function:
-    - Determines whether the source armature is a deform or control rig.
-    - Loads bone data (UE bones and controllers) from a JSON file.
-    - Optionally retargets the source bones using another armature’s bone data.
-    - Applies global transform metadata to the active armature.
-    - Builds the armature by creating both UE bones and controller/helper bones.
+def apply_constraints_from_json(armature, bone_data):
+    for bone_name, data in bone_data.items():
+        print(f"Applying constraints for {bone_name}")
+        if bone_name not in armature.pose.bones:
+            print(f"Bone '{bone_name}' not found in armature.")
+            continue
+        pose_bone = armature.pose.bones[bone_name]
+        for constraint_data in data.get("constraints", []):
+            constraint = pose_bone.constraints.new(constraint_data["type"])
+            for key, value in constraint_data.items():
+                if key == "type":
+                    continue  # Already handled by .new()
+                # Robust target assignment for object fields
+                if key in {"target", "pole_target", "space_object"} and value:
+                    obj = armature
+                    if obj:
+                        setattr(constraint, key, obj)
+                    else:
+                        print(f"Warning: Object '{value}' not found for {key} on bone '{bone_name}'.")
+                    continue
+                # Subtargets are string names (for bone-in-object)
+                if key in {"subtarget", "space_subtarget"}:
+                    setattr(constraint, key, value)
+                    continue
+                # Everything else—set if possible
+                try:
+                    setattr(constraint, key, value)
+                except Exception as e:
+                    print(f"Warning: Could not set {key} to {value} on constraint '{constraint.name}' of bone '{bone_name}': {e}")
+                    
+def apply_drivers_from_json(armature, bone_data):
+    for bone_name, data in bone_data.items():
+        print(f"Applying drivers for {bone_name}")
+        for driver_data in data.get("drivers", []):
+            try:
+                fcurve = armature.driver_add(driver_data["data_path"])
+                driver = fcurve.driver
+                driver.type = 'SCRIPTED'
+                driver.expression = driver_data["expression"]
+                for var_data in driver_data["variables"]:
+                    var = driver.variables.new()
+                    var.name = var_data["name"]
+                    var.type = var_data["type"]
+                    target = var.targets[0]
+                    if var_data["target_id"]:
+                        obj = bpy.data.objects.get(var_data["target_id"])
+                        if obj:
+                            target.id = obj
+                        else:
+                            print(f"Warning: Driver target object '{var_data['target_id']}' not found for bone '{bone_name}'")
+                    target.data_path = var_data["data_path"]
+            except Exception as e:
+                print(f"Failed to create driver on '{bone_name}': {e}")
+                
+def apply_custom_properties(armature, bone_data):
+    """
+    Apply custom properties to pose bones from the provided bone data.
 
     Args:
-        source_armature_name (str): Name of the source armature (usually already in the scene).
-        limb_chain_name (str): Name of the bone group or chain being processed (used in file lookup).
-        retarget_armature_name (str, optional): If provided, bone positions will be retargeted
-                                                from this armature instead.
+        armature (bpy.types.Object): The armature object.
+        bone_data (dict): Dictionary with bone names as keys and custom_properties as nested dicts.
     """
-    # Check if the source armature is a deform rig
+    for bone_name, data in bone_data.items():
+        if bone_name not in armature.pose.bones:
+            print(f"Bone '{bone_name}' not found.")
+            continue
+
+        pose_bone = armature.pose.bones[bone_name]
+        custom_props = data.get("custom_properties", {})
+
+        for prop, value in custom_props.items():
+            try:
+                pose_bone[prop] = value
+                print(f"Set custom property '{prop}' = {value} on bone '{bone_name}'")
+            except Exception as e:
+                print(f"Failed to set custom property '{prop}' on bone '{bone_name}': {e}")
+
+
+def main(source_armature_name, limb_chain_name, retarget_armature_name=None):
+    """
+    Build an armature using stored JSON data, optionally retargeting from another armature.
+
+    Args:
+        source_armature_name (str): Name of the base armature.
+        limb_chain_name (str): Name of the limb or bone group.
+        retarget_armature_name (str, optional): Armature to retarget positions from.
+    """
     is_deform = is_deform_armature(source_armature_name)
 
-    # Locate file paths for the source and (optionally) retarget data
+    # Load source data
     source_file = get_source_file_path(source_armature_name, limb_chain_name)
-    retarget_file = None
+    source_data = get_data_from_file(source_file)
+    ue_bones = source_data.get("ue_bones", {})
+    controllers = source_data.get("controllers", {})
+    meta = source_data.get("_meta", {})
+
+    # Load retarget data if requested
     if retarget_armature_name:
         retarget_file = get_source_file_path(retarget_armature_name, limb_chain_name)
+        retarget_data = get_data_from_file(retarget_file)
+        retarget_bones = retarget_data.get("ue_bones", {}) if retarget_data else {}
 
-    # Load JSON bone data from files
-    source_data = get_data_from_file(source_file)
-    retarget_data = get_data_from_file(retarget_file) if retarget_file else {}
-
-    # Extract UE bone data (main bones) and optional retarget bones
-    ue_bones_data = source_data.get("ue_bones", {})
-    retargeting_bones_data = retarget_data.get("ue_bones", {})
-
-    # If retarget data is available, use it to overwrite positions in source UE bones
-    if retargeting_bones_data:
-        if is_deform:
-            print("RETARGETING A DEFORM ARMATURE")
+        if retarget_bones:
+            print(f"RETARGETING A {'DEFORM' if is_deform else 'CONTROL'} ARMATURE")
+            if is_deform:
+                retarget_deform_bones(ue_bones, retarget_bones)
+            else:
+                retarget_control_bones(ue_bones, retarget_bones)
         else:
-            print("RETARGETING A CONTROL ARMATURE")
-        retarget_ue_bones(source_data, retargeting_bones_data)
+            print("No target bone data found.")
+            print("Checking Print Statements")
 
-    # Get controller/helper bone data and armature metadata
-    controller_bones_data = source_data.get("controllers", {})
-    meta_data = source_data.get("_meta", {})
+    if not ue_bones:
+        print("No source bone data found.")
+        return
 
-    # Create or retrieve the working armature, and apply its global transform
+    # Create and transform the armature
     armature = get_or_create_armature()
-    apply_global_transform(armature, meta_data)
+    apply_global_transform(armature, meta)
 
-    # Basic error handling for missing data
-    if not ue_bones_data:
-        print("No source bone data.")
-    elif not retargeting_bones_data:
-        print("No target bone data.")
-    else:
-        # Apply retargeting override (note: this might be a duplicate retarget, consider revising)
-        ue_bones_data = retarget_ue_bones(ue_bones_data, retargeting_bones_data)
-
-    # Build the UE bones and controller/helper bones into the armature
-    build_bones_from_json_file(meta_data, ue_bones_data, armature)
-    build_bones_from_json_file(meta_data, controller_bones_data, armature)
+    # Build bones into armature
+    print("Building Bones")
+    build_bones_from_json_file(meta, ue_bones, armature)
+    build_bones_from_json_file(meta, controllers, armature)
     
+    # Add Constraints
+    apply_constraints_from_json(armature, ue_bones)
+    apply_constraints_from_json(armature, controllers)
+
+    # Add Drivers
+    apply_drivers_from_json(armature, ue_bones)
+    apply_drivers_from_json(armature, controllers)
+
+    
+    # Add Properties 
+    print("Adding Properties")
+
 if __name__ == "__main__":
     main("driver.01", "arm_l")

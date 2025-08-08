@@ -74,25 +74,29 @@
   {
     "name": "foot_l",
     "roots": [
-              "pinky_metacarpal_l",
-              "ring_metacarpal_l", 
-              "middle_metacarpal_l", 
-              "index_metacarpal_l", 
-              "thumb_01_l"
+              "foot_l"
              ],
     "stops": [],
-    "note": "Left foot IK chain"
+    "note": "Left foot"
   },
   {
     "name": "foot_r",
     "roots": [
-              "pinky_metacarpal_r",
-              "ring_metacarpal_r", 
-              "middle_metacarpal_r", 
-              "index_metacarpal_r", 
-              "thumb_01_r"
+              "foot_l"
              ],
     "stops": [],
-    "note": "Right foot IK chain"
+    "note": "Right foot"
+  },
+  {
+    "name": "All",
+    "roots": [
+              "pelvis",
+              "ik_foot_root",
+              "ik_hand_root",
+              "interaction",
+              "center_of_mass"
+             ],
+    "stops": [],
+    "note": "Whole Armature"
   }
 ]

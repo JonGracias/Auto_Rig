@@ -1,6 +1,6 @@
 {
     "_meta": {
-        "name": "arm_l_driver.01",
+        "name": "arm_l_armature",
         "transform": {
             "location": [
                 0.0,
@@ -13,15 +13,14 @@
                 1.0
             ],
             "dimensions": [
-                1.4212783575057983,
+                2.0196189880371094,
                 1.717008113861084,
                 1.420212984085083
             ]
         },
         "custom_properties": {
             "cycles": []
-        },
-        "rna_ui": {}
+        }
     },
     "ue_bones": {
         "clavicle_l": {
@@ -75,7 +74,6 @@
             "custom_properties": {
                 "blendParent1": "1.000000"
             },
-            "rna_ui": {},
             "head": [
                 10.607198715209961,
                 0.23305754363536835,
@@ -141,7 +139,7 @@
                         {
                             "name": "UpperArmXRot",
                             "type": "SINGLE_PROP",
-                            "target_id": "driver.01",
+                            "target_id": "armature",
                             "data_path": "pose.bones[\"ik_hand_l\"][\"UpperArmXRot\"]"
                         }
                     ]
@@ -153,7 +151,7 @@
                         {
                             "name": "UpperArmZRot",
                             "type": "SINGLE_PROP",
-                            "target_id": "driver.01",
+                            "target_id": "armature",
                             "data_path": "pose.bones[\"ik_hand_l\"][\"UpperArmZRot\"]"
                         }
                     ]
@@ -162,7 +160,6 @@
             "custom_properties": {
                 "blendParent1": "1.000000"
             },
-            "rna_ui": {},
             "head": [
                 24.04612922668457,
                 0.24377107620239258,
@@ -221,19 +218,13 @@
             "rotation_mode": "QUATERNION",
             "constraints": [
                 {
-                    "name": "IK",
                     "type": "IK",
                     "active": true,
-                    "bl_rna": "Kinematic Constraint",
                     "chain_count": 2,
                     "distance": 1.0,
                     "enabled": true,
-                    "error_location": 0.0,
-                    "error_rotation": 0.0,
                     "ik_type": "COPY_POSE",
                     "influence": 1.0,
-                    "is_override_data": false,
-                    "is_valid": true,
                     "iterations": 500,
                     "limit_mode": "LIMITDIST_INSIDE",
                     "lock_location_x": true,
@@ -247,14 +238,12 @@
                     "owner_space": "WORLD",
                     "pole_angle": 3.141590118408203,
                     "pole_subtarget": "arm_pole_target_l",
-                    "pole_target": "driver.01",
+                    "pole_target": "armature",
                     "reference_axis": "BONE",
-                    "rna_type": "Kinematic Constraint",
-                    "show_expanded": true,
                     "space_object": null,
                     "space_subtarget": "",
                     "subtarget": "mch_ik_hand_l",
-                    "target": "driver.01",
+                    "target": "armature",
                     "target_space": "WORLD",
                     "use_location": true,
                     "use_rotation": false,
@@ -271,7 +260,7 @@
                         {
                             "name": "IKInfluence",
                             "type": "SINGLE_PROP",
-                            "target_id": "driver.01",
+                            "target_id": "armature",
                             "data_path": "pose.bones[\"ik_hand_l\"][\"IKInfluence\"]"
                         }
                     ]
@@ -283,14 +272,13 @@
                         {
                             "name": "ForeArmZRot",
                             "type": "SINGLE_PROP",
-                            "target_id": "driver.01",
+                            "target_id": "armature",
                             "data_path": "pose.bones[\"ik_hand_l\"][\"ForeArmZRot\"]"
                         }
                     ]
                 }
             ],
             "custom_properties": {},
-            "rna_ui": {},
             "head": [
                 49.37191390991211,
                 0.5147989392280579,
@@ -350,20 +338,14 @@
                     false
                 ]
             },
-            "rotation_mode": "QUATERNION",
+            "rotation_mode": "XYZ",
             "constraints": [
                 {
-                    "name": "Limit Rotation",
                     "type": "LIMIT_ROTATION",
                     "active": true,
-                    "bl_rna": "Limit Rotation Constraint",
                     "enabled": true,
-                    "error_location": 0.0,
-                    "error_rotation": 0.0,
                     "euler_order": "AUTO",
                     "influence": 1.0,
-                    "is_override_data": false,
-                    "is_valid": true,
                     "max_x": 1.483529806137085,
                     "max_y": 0.0,
                     "max_z": 0.7853981852531433,
@@ -372,8 +354,6 @@
                     "min_z": 0.0,
                     "mute": false,
                     "owner_space": "LOCAL",
-                    "rna_type": "Limit Rotation Constraint",
-                    "show_expanded": true,
                     "space_object": null,
                     "space_subtarget": "",
                     "target_space": "WORLD",
@@ -392,7 +372,7 @@
                         {
                             "name": "ZRot",
                             "type": "SINGLE_PROP",
-                            "target_id": "driver.01",
+                            "target_id": "armature",
                             "data_path": "pose.bones[\"ik_hand_l\"][\"WristZRot\"]"
                         }
                     ]
@@ -404,14 +384,61 @@
                         {
                             "name": "XRot",
                             "type": "SINGLE_PROP",
-                            "target_id": "driver.01",
+                            "target_id": "armature",
                             "data_path": "pose.bones[\"ik_hand_l\"][\"WristXRot\"]"
+                        }
+                    ]
+                },
+                {
+                    "data_path": "pose.bones[\"hand_l\"].rotation_quaternion",
+                    "expression": "YRot * .915",
+                    "variables": [
+                        {
+                            "name": "YRot",
+                            "type": "SINGLE_PROP",
+                            "target_id": "armature",
+                            "data_path": "pose.bones[\"ik_hand_l\"][\"WristYRot\"]"
+                        }
+                    ]
+                },
+                {
+                    "data_path": "pose.bones[\"hand_l\"].rotation_euler",
+                    "expression": "XRot * .915",
+                    "variables": [
+                        {
+                            "name": "XRot",
+                            "type": "SINGLE_PROP",
+                            "target_id": "armature",
+                            "data_path": "pose.bones[\"ik_hand_l\"][\"WristXRot\"]"
+                        }
+                    ]
+                },
+                {
+                    "data_path": "pose.bones[\"hand_l\"].rotation_euler",
+                    "expression": "YRot * 2",
+                    "variables": [
+                        {
+                            "name": "YRot",
+                            "type": "SINGLE_PROP",
+                            "target_id": "armature",
+                            "data_path": "pose.bones[\"ik_hand_l\"][\"WristYRot\"]"
+                        }
+                    ]
+                },
+                {
+                    "data_path": "pose.bones[\"hand_l\"].rotation_euler",
+                    "expression": "ZRot * .415",
+                    "variables": [
+                        {
+                            "name": "ZRot",
+                            "type": "SINGLE_PROP",
+                            "target_id": "armature",
+                            "data_path": "pose.bones[\"ik_hand_l\"][\"WristZRot\"]"
                         }
                     ]
                 }
             ],
             "custom_properties": {},
-            "rna_ui": {},
             "head": [
                 67.951416015625,
                 0.006384313106536865,
@@ -470,31 +497,23 @@
             "rotation_mode": "QUATERNION",
             "constraints": [
                 {
-                    "name": "Stretch To",
                     "type": "STRETCH_TO",
                     "active": true,
-                    "bl_rna": "Stretch To Constraint",
                     "bulge": 1.0,
                     "bulge_max": 1.0,
                     "bulge_min": 1.0,
                     "bulge_smooth": 0.0,
                     "enabled": true,
-                    "error_location": 0.0,
-                    "error_rotation": 0.0,
                     "head_tail": 0.0,
                     "influence": 1.0,
-                    "is_override_data": false,
-                    "is_valid": true,
                     "keep_axis": "SWING_Y",
                     "mute": false,
                     "owner_space": "WORLD",
                     "rest_length": 42.5,
-                    "rna_type": "Stretch To Constraint",
-                    "show_expanded": true,
                     "space_object": null,
                     "space_subtarget": "",
                     "subtarget": "ik_hand_l",
-                    "target": "driver.01",
+                    "target": "armature",
                     "target_space": "WORLD",
                     "use_bbone_shape": false,
                     "use_bulge_max": false,
@@ -502,16 +521,10 @@
                     "volume": "VOLUME_XZX"
                 },
                 {
-                    "name": "Limit Scale",
                     "type": "LIMIT_SCALE",
                     "active": false,
-                    "bl_rna": "Limit Size Constraint",
                     "enabled": true,
-                    "error_location": 0.0,
-                    "error_rotation": 0.0,
                     "influence": 1.0,
-                    "is_override_data": false,
-                    "is_valid": true,
                     "max_x": 0.0,
                     "max_y": 1.0,
                     "max_z": 0.0,
@@ -520,8 +533,6 @@
                     "min_z": 0.0,
                     "mute": false,
                     "owner_space": "LOCAL",
-                    "rna_type": "Limit Size Constraint",
-                    "show_expanded": true,
                     "space_object": null,
                     "space_subtarget": "",
                     "target_space": "WORLD",
@@ -536,7 +547,6 @@
             ],
             "drivers": [],
             "custom_properties": {},
-            "rna_ui": {},
             "head": [
                 24.04612922668457,
                 0.24377107620239258,
@@ -601,7 +611,6 @@
             "custom_properties": {
                 "filmboxTypeID": "5"
             },
-            "rna_ui": {},
             "head": [
                 0.0,
                 0.0,
@@ -663,7 +672,6 @@
             "constraints": [],
             "drivers": [],
             "custom_properties": {},
-            "rna_ui": {},
             "head": [
                 49.37191390991211,
                 41.12117385864258,
@@ -738,9 +746,9 @@
                 "UpperArmZRot": 0.0,
                 "UpperArmXRot": 0.0,
                 "IKInfluence": 1.0,
-                "ForeArmZRot": 0.0
+                "ForeArmZRot": 0.0,
+                "WristYRot": 0.0
             },
-            "rna_ui": {},
             "head": [
                 67.951416015625,
                 0.006384313106536865,
@@ -797,28 +805,20 @@
             "rotation_mode": "QUATERNION",
             "constraints": [
                 {
-                    "name": "Copy Location",
                     "type": "COPY_LOCATION",
                     "active": true,
-                    "bl_rna": "Copy Location Constraint",
                     "enabled": true,
-                    "error_location": 0.0,
-                    "error_rotation": 0.0,
                     "head_tail": 1.0,
                     "influence": 1.0,
                     "invert_x": false,
                     "invert_y": false,
                     "invert_z": false,
-                    "is_override_data": false,
-                    "is_valid": true,
                     "mute": false,
                     "owner_space": "WORLD",
-                    "rna_type": "Copy Location Constraint",
-                    "show_expanded": true,
                     "space_object": null,
                     "space_subtarget": "",
                     "subtarget": "mch_arm_length",
-                    "target": "driver.01",
+                    "target": "armature",
                     "target_space": "WORLD",
                     "use_bbone_shape": false,
                     "use_offset": false,
@@ -829,7 +829,6 @@
             ],
             "drivers": [],
             "custom_properties": {},
-            "rna_ui": {},
             "head": [
                 67.951416015625,
                 0.006384313106536865,

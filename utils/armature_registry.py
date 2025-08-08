@@ -46,7 +46,7 @@ def get_items_by_type(is_deform=True):
     return sorted(items)
 
 def get_limb_items_from(armature_name):
-    print(f"[AutoRig Debug] Fetching limbs for armature: {armature_name}")
+    #print(f"[AutoRig Debug] Fetching limbs for armature: {armature_name}")
     items = []
 
     if not armature_name:
@@ -54,7 +54,7 @@ def get_limb_items_from(armature_name):
 
     scripts_dir = bpy.utils.user_resource('SCRIPTS')
     driver_path = os.path.join(scripts_dir, "addons", "Auto_Rig", "Hierarchy", armature_name)
-    print(f"[AutoRig Debug] Looking in: {driver_path}")
+    #print(f"[AutoRig Debug] Looking in: {driver_path}")
 
     if os.path.isdir(driver_path):
         for file in os.listdir(driver_path):
