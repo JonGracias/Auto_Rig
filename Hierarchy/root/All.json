@@ -8,14 +8,14 @@
                 0.0
             ],
             "scale": [
-                1.0,
-                1.0,
-                1.0
+                100.0,
+                100.0,
+                100.0
             ],
             "dimensions": [
-                1.9127815961837769,
-                1.3427462577819824,
-                1.7105731964111328
+                135.60000610351562,
+                125.93748474121094,
+                159.0
             ]
         },
         "custom_properties": {
@@ -30,7 +30,7 @@
             ],
             "parent": null,
             "children": [
-                "spine_",
+                "spine_01",
                 "thigh_r",
                 "thigh_l"
             ],
@@ -73,21 +73,28 @@
             "rotation_mode": "QUATERNION",
             "constraints": [
                 {
-                    "type": "COPY_TRANSFORMS",
+                    "type": "CHILD_OF",
                     "active": true,
                     "enabled": true,
-                    "head_tail": 0.0,
                     "influence": 1.0,
-                    "mix_mode": "REPLACE",
+                    "inverse_matrix": "<Matrix 4x4 (-0.0000, 0.0000,  1.0000, -72.0000)\n            ( 0.0000, 1.0000, -0.0000,   0.0000)\n            (-1.0000, 0.0000, -0.0000,   0.0001)\n            ( 0.0000, 0.0000,  0.0000,   1.0000)>",
                     "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
+                    "owner_space": "POSE",
+                    "set_inverse_pending": false,
                     "space_object": null,
                     "space_subtarget": "",
                     "subtarget": "pelvis",
                     "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
+                    "target_space": "WORLD",
+                    "use_location_x": true,
+                    "use_location_y": true,
+                    "use_location_z": true,
+                    "use_rotation_x": true,
+                    "use_rotation_y": true,
+                    "use_rotation_z": true,
+                    "use_scale_x": true,
+                    "use_scale_y": true,
+                    "use_scale_z": true
                 }
             ],
             "drivers": [],
@@ -96,22 +103,22 @@
             },
             "head": [
                 -9.094947017729282e-13,
-                0.018122047185897827,
-                72.72991180419922
+                0.0,
+                72.0
             ],
             "tail": [
                 4.379634675755195e-15,
-                15.018121719360352,
-                72.72991180419922
+                15.0,
+                72.0
             ]
         },
-        "spine_": {
+        "spine_01": {
             "bone_collections": [
                 "Deform"
             ],
             "parent": "pelvis",
             "children": [
-                "spine_.001"
+                "spine_02"
             ],
             "bone_color": null,
             "custom_shape": {
@@ -150,47 +157,78 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
+            "constraints": [],
+            "drivers": [
                 {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "spine_01",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
+                    "data_path": "pose.bones[\"spine_01\"].rotation_quaternion",
+                    "expression": "var",
+                    "variables": [
+                        {
+                            "name": "var",
+                            "type": "TRANSFORMS",
+                            "target_id": "armature",
+                            "data_path": ""
+                        }
+                    ]
+                },
+                {
+                    "data_path": "pose.bones[\"spine_01\"].rotation_quaternion",
+                    "expression": "-var",
+                    "variables": [
+                        {
+                            "name": "var",
+                            "type": "TRANSFORMS",
+                            "target_id": "armature",
+                            "data_path": ""
+                        }
+                    ]
+                },
+                {
+                    "data_path": "pose.bones[\"spine_01\"].rotation_quaternion",
+                    "expression": "var",
+                    "variables": [
+                        {
+                            "name": "var",
+                            "type": "TRANSFORMS",
+                            "target_id": "armature",
+                            "data_path": ""
+                        }
+                    ]
+                },
+                {
+                    "data_path": "pose.bones[\"spine_01\"].rotation_quaternion",
+                    "expression": "var",
+                    "variables": [
+                        {
+                            "name": "var",
+                            "type": "TRANSFORMS",
+                            "target_id": "armature",
+                            "data_path": ""
+                        }
+                    ]
                 }
             ],
-            "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
                 -1.517030341346981e-07,
-                0.018122047185897827,
-                78.28866577148438
+                0.0,
+                75.0
             ],
             "tail": [
                 7.305231974896742e-10,
-                15.018121719360352,
-                78.28866577148438
+                15.0,
+                75.0
             ]
         },
-        "spine_.001": {
+        "spine_02": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_",
+            "parent": "spine_01",
             "children": [
-                "spine_.002"
+                "spine_03"
             ],
             "bone_color": null,
             "custom_shape": {
@@ -229,47 +267,29 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "spine_02",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
                 -4.0628401620779186e-07,
-                0.018122047185897827,
-                83.87401580810547
+                0.0,
+                80.0
             ],
             "tail": [
                 1.9564652120607207e-09,
-                15.018121719360352,
-                83.87401580810547
+                15.0,
+                80.0
             ]
         },
-        "spine_.002": {
+        "spine_03": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_.001",
+            "parent": "spine_02",
             "children": [
-                "spine_.003"
+                "spine_04"
             ],
             "bone_color": null,
             "custom_shape": {
@@ -308,47 +328,29 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "spine_03",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                -7.972175808390602e-07,
-                0.018122047185897827,
-                89.76905059814453
+                0.0,
+                0.0,
+                85.0
             ],
             "tail": [
-                -9.544277190798311e-07,
-                15.018121719360352,
-                89.76905059814453
+                0.0,
+                15.0,
+                85.0
             ]
         },
-        "spine_.003": {
+        "spine_04": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_.002",
+            "parent": "spine_03",
             "children": [
-                "spine_.004"
+                "spine_05"
             ],
             "bone_color": null,
             "custom_shape": {
@@ -387,47 +389,29 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "spine_04",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                -1.2417059451763635e-06,
-                0.018122047185897827,
-                96.43424224853516
+                0.0,
+                0.0,
+                92.5
             ],
             "tail": [
-                -1.2417059451763635e-06,
-                15.018121719360352,
-                96.43424224853516
+                0.0,
+                15.0,
+                92.5
             ]
         },
-        "spine_.004": {
+        "spine_05": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_.003",
+            "parent": "spine_04",
             "children": [
-                "neck_",
+                "neck_01",
                 "clavicle_l",
                 "clavicle_r"
             ],
@@ -468,48 +452,30 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "spine_05",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true,
                 "blendParent1": "1.000000"
             },
             "head": [
-                -1.9326721485413145e-06,
-                0.018122047185897827,
-                107.80589294433594
+                0.0,
+                0.0,
+                107.5
             ],
             "tail": [
                 -1.9072266468356247e-06,
-                15.018121719360352,
-                107.80589294433594
+                15.0,
+                107.5
             ]
         },
-        "neck_": {
+        "neck_01": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_.004",
+            "parent": "spine_05",
             "children": [
-                "neck_.001"
+                "neck_02"
             ],
             "bone_color": null,
             "custom_shape": {
@@ -548,45 +514,27 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "neck_01",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                7.420025667670416e-06,
-                0.23467063903808594,
-                123.82938385009766
+                0.0,
+                0.0,
+                122.5
             ],
             "tail": [
                 7.633499080839101e-06,
-                15.234670639038086,
-                123.82938385009766
+                15.0,
+                122.5
             ]
         },
-        "neck_.001": {
+        "neck_02": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "neck_",
+            "parent": "neck_01",
             "children": [
                 "head"
             ],
@@ -627,45 +575,27 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "neck_02",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
                 -3.273212541898829e-06,
-                0.018122047185897827,
-                125.06938171386719
+                0.0,
+                124.125
             ],
             "tail": [
                 -2.8590379770321306e-06,
-                15.018121719360352,
-                125.06938171386719
+                15.0,
+                124.125
             ]
         },
         "head": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "neck_.001",
+            "parent": "neck_02",
             "children": [],
             "bone_color": null,
             "custom_shape": {
@@ -704,45 +634,27 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "head",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
                 -3.2732127692725044e-06,
-                0.018121756613254547,
-                126.02130126953125
+                0.0,
+                126.0
             ],
             "tail": [
                 -2.8590379770321306e-06,
-                15.018121719360352,
-                126.02130126953125
+                15.0,
+                126.0
             ]
         },
         "clavicle_l": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_.004",
+            "parent": "spine_05",
             "children": [
                 "upperarm_l"
             ],
@@ -783,39 +695,21 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "clavicle_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true,
                 "blendParent1": "1.000000"
             },
             "head": [
-                10.607198715209961,
-                0.23305754363536835,
-                113.51496887207031
+                2.5,
+                0.0,
+                113.5
             ],
             "tail": [
-                10.607198715209961,
-                15.233057975769043,
-                113.51496887207031
+                2.5,
+                15.0,
+                113.5
             ]
         },
         "upperarm_l": {
@@ -863,39 +757,21 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "upperarm_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true,
                 "blendParent1": "1.000000"
             },
             "head": [
-                24.04612922668457,
-                0.24377107620239258,
-                113.38774871826172
+                25.0,
+                0.0,
+                113.5
             ],
             "tail": [
-                24.04612922668457,
-                15.243770599365234,
-                113.38774871826172
+                25.0,
+                15.0,
+                113.5
             ]
         },
         "lowerarm_l": {
@@ -943,62 +819,20 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": false,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "lowerarm_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                },
-                {
-                    "type": "LIMIT_SCALE",
-                    "active": true,
-                    "enabled": true,
-                    "influence": 1.0,
-                    "max_x": 1.0,
-                    "max_y": 1.0,
-                    "max_z": 1.0,
-                    "min_x": 1.0,
-                    "min_y": 1.0,
-                    "min_z": 1.0,
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "target_space": "WORLD",
-                    "use_max_x": true,
-                    "use_max_y": true,
-                    "use_max_z": true,
-                    "use_min_x": true,
-                    "use_min_y": true,
-                    "use_min_z": true,
-                    "use_transform_limit": true
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                49.37191390991211,
-                0.5147989392280579,
-                113.40502166748047
+                50.0,
+                0.0,
+                113.5
             ],
             "tail": [
-                49.37191390991211,
-                15.006383895874023,
-                113.40502166748047
+                50.0,
+                15.0,
+                113.5
             ]
         },
         "hand_l": {
@@ -1006,324 +840,6 @@
                 "Deform"
             ],
             "parent": "lowerarm_l",
-            "children": [
-                "index_metacarpal_l",
-                "middle_metacarpal_l",
-                "thumb_01_l",
-                "pinky_metacarpal_l",
-                "ring_metacarpal_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "hand_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                67.951416015625,
-                0.006384313106536865,
-                113.40502166748047
-            ],
-            "tail": [
-                67.951416015625,
-                0.006384313106536865,
-                108.34562683105469
-            ]
-        },
-        "index_metacarpal_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "hand_l",
-            "children": [
-                "index_01_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "index_metacarpal_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                76.61893463134766,
-                -8.215882301330566,
-                113.34111785888672
-            ],
-            "tail": [
-                76.61893463134766,
-                -8.215882301330566,
-                107.34111785888672
-            ]
-        },
-        "index_01_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "index_metacarpal_l",
-            "children": [
-                "index_02_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "index_01_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                81.50999450683594,
-                -8.641355514526367,
-                113.3411636352539
-            ],
-            "tail": [
-                81.50999450683594,
-                -8.641355514526367,
-                107.3411636352539
-            ]
-        },
-        "index_02_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "index_01_l",
-            "children": [
-                "index_03_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "index_02_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {},
-            "head": [
-                88.59495544433594,
-                -8.641357421875,
-                113.34115600585938
-            ],
-            "tail": [
-                88.59495544433594,
-                -8.641356468200684,
-                107.34115600585938
-            ]
-        },
-        "index_03_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "index_02_l",
             "children": [],
             "bone_color": null,
             "custom_shape": {
@@ -1362,1220 +878,27 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "index_03_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {},
-            "head": [
-                93.93427276611328,
-                -8.641358375549316,
-                113.34115600585938
-            ],
-            "tail": [
-                93.93427276611328,
-                -8.641355514526367,
-                107.34115600585938
-            ]
-        },
-        "middle_metacarpal_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "hand_l",
-            "children": [
-                "middle_01_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "middle_metacarpal_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                76.61893463134766,
-                -2.8180487155914307,
-                113.34111785888672
+                67.80000305175781,
+                0.0,
+                113.5
             ],
             "tail": [
-                76.61893463134766,
-                -2.8180487155914307,
-                107.34111785888672
-            ]
-        },
-        "middle_01_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "middle_metacarpal_l",
-            "children": [
-                "middle_02_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "middle_01_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                81.92652130126953,
-                -2.9680240154266357,
-                113.3411636352539
-            ],
-            "tail": [
-                81.92652130126953,
-                -2.9680235385894775,
-                107.3411636352539
-            ]
-        },
-        "middle_02_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "middle_01_l",
-            "children": [
-                "middle_03_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "middle_02_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                89.85845947265625,
-                -2.9680240154266357,
-                113.34115600585938
-            ],
-            "tail": [
-                89.85845947265625,
-                -2.9680235385894775,
-                107.34115600585938
-            ]
-        },
-        "middle_03_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "middle_02_l",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "middle_03_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                95.62195587158203,
-                -2.9680235385894775,
-                113.3411636352539
-            ],
-            "tail": [
-                95.62195587158203,
-                -2.9680230617523193,
-                107.3411636352539
-            ]
-        },
-        "thumb_01_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "hand_l",
-            "children": [
-                "thumb_02_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "thumb_01_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": false
-            },
-            "head": [
-                71.00775909423828,
-                -5.600834846496582,
-                113.2071762084961
-            ],
-            "tail": [
-                71.00775909423828,
-                -5.600834846496582,
-                107.34111785888672
-            ]
-        },
-        "thumb_02_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "thumb_01_l",
-            "children": [
-                "thumb_03_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "thumb_02_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": false
-            },
-            "head": [
-                71.00499725341797,
-                -11.977807998657227,
-                113.19978332519531
-            ],
-            "tail": [
-                71.00499725341797,
-                -11.977807998657227,
-                107.19978332519531
-            ]
-        },
-        "thumb_03_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "thumb_02_l",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "thumb_03_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": false
-            },
-            "head": [
-                71.0050048828125,
-                -18.33403205871582,
-                113.21025848388672
-            ],
-            "tail": [
-                71.0050048828125,
-                -18.33403205871582,
-                107.21025848388672
-            ]
-        },
-        "pinky_metacarpal_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "hand_l",
-            "children": [
-                "pinky_01_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "pinky_metacarpal_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                76.61893463134766,
-                8.614237785339355,
-                113.34111785888672
-            ],
-            "tail": [
-                76.61893463134766,
-                8.614237785339355,
-                107.34111785888672
-            ]
-        },
-        "pinky_01_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "pinky_metacarpal_l",
-            "children": [
-                "pinky_02_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "pinky_01_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                80.24885559082031,
-                9.039709091186523,
-                113.34115600585938
-            ],
-            "tail": [
-                80.24885559082031,
-                9.03971004486084,
-                107.34115600585938
-            ]
-        },
-        "pinky_02_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "pinky_01_l",
-            "children": [
-                "pinky_03_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "pinky_02_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                86.96294403076172,
-                9.03971004486084,
-                113.34114074707031
-            ],
-            "tail": [
-                86.96294403076172,
-                9.039710998535156,
-                107.34114074707031
-            ]
-        },
-        "pinky_03_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "pinky_02_l",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "pinky_03_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                90.99987030029297,
-                9.039709091186523,
-                113.34115600585938
-            ],
-            "tail": [
-                90.99987030029297,
-                9.039710998535156,
-                107.34115600585938
-            ]
-        },
-        "ring_metacarpal_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "hand_l",
-            "children": [
-                "ring_01_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "ring_metacarpal_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                76.61893463134766,
-                2.9372828006744385,
-                113.34111785888672
-            ],
-            "tail": [
-                76.61893463134766,
-                2.9372828006744385,
-                107.34111785888672
-            ]
-        },
-        "ring_01_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "ring_metacarpal_l",
-            "children": [
-                "ring_02_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "ring_01_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                81.5964584350586,
-                3.0810508728027344,
-                113.34115600585938
-            ],
-            "tail": [
-                81.5964584350586,
-                3.081051826477051,
-                107.34115600585938
-            ]
-        },
-        "ring_02_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "ring_01_l",
-            "children": [
-                "ring_03_l"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "ring_02_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                88.6295166015625,
-                3.081051826477051,
-                113.34114074707031
-            ],
-            "tail": [
-                88.6295166015625,
-                3.081052303314209,
-                107.34114074707031
-            ]
-        },
-        "ring_03_l": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "ring_02_l",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "ring_03_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                93.90381622314453,
-                3.081051826477051,
-                113.34114074707031
-            ],
-            "tail": [
-                93.90381622314453,
-                3.081052303314209,
-                107.34114074707031
+                67.80000305175781,
+                0.0,
+                105.0
             ]
         },
         "clavicle_r": {
             "bone_collections": [
                 "Deform"
             ],
-            "parent": "spine_.004",
+            "parent": "spine_05",
             "children": [
                 "upperarm_r"
             ],
@@ -2616,39 +939,21 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": true,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "clavicle_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true,
                 "blendParent1": "1.000000"
             },
             "head": [
-                -10.52597427368164,
-                0.23305611312389374,
-                113.51448059082031
+                -2.5,
+                0.0,
+                113.5
             ],
             "tail": [
-                -10.525972366333008,
-                15.23305606842041,
-                113.51448059082031
+                -2.5,
+                15.0,
+                113.5
             ]
         },
         "upperarm_r": {
@@ -2696,39 +1001,21 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "upperarm_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true,
                 "blendParent1": "1.000000"
             },
             "head": [
-                -24.052867889404297,
-                0.2382030487060547,
-                113.39066314697266
+                -25.0,
+                0.0,
+                113.5
             ],
             "tail": [
-                -24.052865982055664,
-                15.238203048706055,
-                113.3906478881836
+                -25.0,
+                15.0,
+                113.5
             ]
         },
         "lowerarm_r": {
@@ -2776,38 +1063,20 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "lowerarm_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                -49.437843322753906,
-                0.5188708305358887,
-                113.397216796875
+                -50.0,
+                0.0,
+                113.5
             ],
             "tail": [
-                -49.437843322753906,
-                15.014761924743652,
-                113.397216796875
+                -50.0,
+                15.0,
+                113.5
             ]
         },
         "hand_r": {
@@ -2815,326 +1084,6 @@
                 "Deform"
             ],
             "parent": "lowerarm_r",
-            "children": [
-                "pinky_metacarpal_r",
-                "ring_metacarpal_r",
-                "middle_metacarpal_r",
-                "index_metacarpal_r",
-                "thumb_01_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "hand_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -67.951416015625,
-                0.006384313106536865,
-                113.40502166748047
-            ],
-            "tail": [
-                -67.951416015625,
-                0.006384313106536865,
-                118.06007385253906
-            ]
-        },
-        "pinky_metacarpal_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "hand_r",
-            "children": [
-                "pinky_01_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "pinky_metacarpal_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -76.61893463134766,
-                8.69298267364502,
-                113.34111785888672
-            ],
-            "tail": [
-                -76.61893463134766,
-                8.69298267364502,
-                119.34111785888672
-            ]
-        },
-        "pinky_01_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "pinky_metacarpal_r",
-            "children": [
-                "pinky_02_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "pinky_01_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -80.32268524169922,
-                9.166104316711426,
-                113.34115600585938
-            ],
-            "tail": [
-                -80.32268524169922,
-                9.166104316711426,
-                119.34115600585938
-            ]
-        },
-        "pinky_02_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "pinky_01_r",
-            "children": [
-                "pinky_03_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "pinky_02_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -86.96294403076172,
-                9.118454933166504,
-                113.34114074707031
-            ],
-            "tail": [
-                -86.96294403076172,
-                9.11845588684082,
-                119.34114074707031
-            ]
-        },
-        "pinky_03_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "pinky_02_r",
             "children": [],
             "bone_color": null,
             "custom_shape": {
@@ -3173,1215 +1122,20 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "pinky_03_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                -90.99987030029297,
-                9.118453979492188,
-                113.34115600585938
+                -67.80000305175781,
+                0.0,
+                113.5
             ],
             "tail": [
-                -90.99987030029297,
-                9.11845588684082,
-                119.34115600585938
-            ]
-        },
-        "ring_metacarpal_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "hand_r",
-            "children": [
-                "ring_01_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "ring_metacarpal_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -76.61893463134766,
-                3.173516035079956,
-                113.34111785888672
-            ],
-            "tail": [
-                -76.61893463134766,
-                3.173516035079956,
-                119.34111785888672
-            ]
-        },
-        "ring_01_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "ring_metacarpal_r",
-            "children": [
-                "ring_02_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "ring_01_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -81.49756622314453,
-                2.7115771770477295,
-                113.34114074707031
-            ],
-            "tail": [
-                -81.49756622314453,
-                2.7115774154663086,
-                119.34114074707031
-            ]
-        },
-        "ring_02_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "ring_01_r",
-            "children": [
-                "ring_03_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "ring_02_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -88.6295166015625,
-                3.3172850608825684,
-                113.34114074707031
-            ],
-            "tail": [
-                -88.6295166015625,
-                3.3172855377197266,
-                119.34114074707031
-            ]
-        },
-        "ring_03_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "ring_02_r",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "ring_03_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -93.90381622314453,
-                3.3172850608825684,
-                113.34114074707031
-            ],
-            "tail": [
-                -93.90381622314453,
-                3.3172855377197266,
-                119.34114074707031
-            ]
-        },
-        "middle_metacarpal_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "hand_r",
-            "children": [
-                "middle_01_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "middle_metacarpal_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -76.61893463134766,
-                -2.581815481185913,
-                113.34111785888672
-            ],
-            "tail": [
-                -76.61893463134766,
-                -2.581815481185913,
-                119.34111785888672
-            ]
-        },
-        "middle_01_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "middle_metacarpal_r",
-            "children": [
-                "middle_02_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "middle_01_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -81.9312744140625,
-                -2.9689364433288574,
-                113.34115600585938
-            ],
-            "tail": [
-                -81.9312744140625,
-                -2.9689364433288574,
-                119.34115600585938
-            ]
-        },
-        "middle_02_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "middle_01_r",
-            "children": [
-                "middle_03_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "middle_02_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -89.85845947265625,
-                -2.7317910194396973,
-                113.34115600585938
-            ],
-            "tail": [
-                -89.85845947265625,
-                -2.73179030418396,
-                119.34115600585938
-            ]
-        },
-        "middle_03_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "middle_02_r",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "middle_03_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -95.65626525878906,
-                -2.968938112258911,
-                113.34115600585938
-            ],
-            "tail": [
-                -95.65626525878906,
-                -2.968938112258911,
-                119.34115600585938
-            ]
-        },
-        "index_metacarpal_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "hand_r",
-            "children": [
-                "index_01_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "index_metacarpal_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -76.61893463134766,
-                -7.979648590087891,
-                113.34111785888672
-            ],
-            "tail": [
-                -76.6188735961914,
-                -7.979648590087891,
-                119.34111785888672
-            ]
-        },
-        "index_01_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "index_metacarpal_r",
-            "children": [
-                "index_02_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "index_01_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -81.52462005615234,
-                -8.608758926391602,
-                113.34115600585938
-            ],
-            "tail": [
-                -81.52462005615234,
-                -8.608758926391602,
-                119.34115600585938
-            ]
-        },
-        "index_02_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "index_01_r",
-            "children": [
-                "index_03_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "index_02_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -88.59495544433594,
-                -8.405123710632324,
-                113.34115600585938
-            ],
-            "tail": [
-                -88.59495544433594,
-                -8.405122756958008,
-                119.34115600585938
-            ]
-        },
-        "index_03_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "index_02_r",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "index_03_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -93.93427276611328,
-                -8.40512466430664,
-                113.34115600585938
-            ],
-            "tail": [
-                -93.93427276611328,
-                -8.405121803283691,
-                119.34115600585938
-            ]
-        },
-        "thumb_01_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "hand_r",
-            "children": [
-                "thumb_02_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "thumb_01_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -70.95919036865234,
-                -5.600834846496582,
-                113.34111785888672
-            ],
-            "tail": [
-                -70.95919036865234,
-                -5.600834846496582,
-                119.34111785888672
-            ]
-        },
-        "thumb_02_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "thumb_01_r",
-            "children": [
-                "thumb_03_r"
-            ],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "thumb_02_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -71.00499725341797,
-                -11.977807998657227,
-                113.19978332519531
-            ],
-            "tail": [
-                -71.00499725341797,
-                -11.977807998657227,
-                119.19978332519531
-            ]
-        },
-        "thumb_03_r": {
-            "bone_collections": [
-                "Deform"
-            ],
-            "parent": "thumb_02_r",
-            "children": [],
-            "bone_color": null,
-            "custom_shape": {
-                "object": null,
-                "transform": null,
-                "scale_xyz": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "translation": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "wire_width": 1.0,
-                "rotation": null,
-                "use_bone_size": true
-            },
-            "lock": {
-                "location": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation": [
-                    false,
-                    false,
-                    false
-                ],
-                "rotation_w": false,
-                "scale": [
-                    false,
-                    false,
-                    false
-                ]
-            },
-            "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "thumb_03_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
-            "drivers": [],
-            "custom_properties": {
-                "lockInfluenceWeights": true
-            },
-            "head": [
-                -71.0050048828125,
-                -18.33403205871582,
-                113.21025848388672
-            ],
-            "tail": [
-                -71.0050048828125,
-                -18.33403205871582,
-                119.21025848388672
+                -67.80000305175781,
+                0.0,
+                105.0
             ]
         },
         "thigh_r": {
@@ -4429,39 +1183,21 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "thigh_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true,
                 "blendParent1": "1.000000"
             },
             "head": [
-                -14.368075370788574,
-                0.026244640350341797,
-                69.41014099121094
+                -12.5,
+                0.0,
+                70.0
             ],
             "tail": [
-                -14.368075370788574,
-                -14.973755836486816,
-                69.41012573242188
+                -12.5,
+                15.0,
+                70.0
             ]
         },
         "calf_r": {
@@ -4509,38 +1245,20 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "calf_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                -14.850275993347168,
-                -1.5846729278564453,
-                40.38672637939453
+                -13.75,
+                -0.4000000059604645,
+                41.25
             ],
             "tail": [
-                -14.850275993347168,
-                -14.929059028625488,
-                40.38672637939453
+                -13.75,
+                15.07090950012207,
+                41.25
             ]
         },
         "foot_r": {
@@ -4588,38 +1306,20 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "foot_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                -15.207133293151855,
-                -0.2487550973892212,
-                12.569074630737305
+                -15.0,
+                0.0,
+                12.5
             ],
             "tail": [
-                -15.185696601867676,
-                -15.248739242553711,
-                12.569076538085938
+                -15.0,
+                15.0,
+                12.5
             ]
         },
         "ball_r": {
@@ -4665,38 +1365,20 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "ball_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                -15.201828002929688,
-                -9.11050033569336,
-                3.1644630432128906
+                -15.0,
+                -10.0,
+                3.0
             ],
             "tail": [
-                -15.201828002929688,
-                -9.110498428344727,
-                -12.763904571533203
+                -15.0,
+                -10.0,
+                19.0
             ]
         },
         "thigh_l": {
@@ -4744,39 +1426,21 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "thigh_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true,
                 "blendParent1": "1.000000"
             },
             "head": [
-                14.391332626342773,
-                0.02620840072631836,
-                69.4073486328125
+                12.5,
+                0.0,
+                70.0
             ],
             "tail": [
-                14.391332626342773,
-                15.026208877563477,
-                69.4073486328125
+                12.5,
+                15.0,
+                70.0
             ]
         },
         "calf_l": {
@@ -4824,38 +1488,20 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "calf_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                14.874313354492188,
-                -1.5847053527832031,
-                40.427284240722656
+                13.75,
+                -0.4000000059604645,
+                41.25
             ],
             "tail": [
-                14.874313354492188,
+                13.75,
                 15.07090950012207,
-                40.427284240722656
+                41.25
             ]
         },
         "foot_l": {
@@ -4901,60 +1547,20 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": false,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "foot_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                },
-                {
-                    "type": "COPY_LOCATION",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 1.0,
-                    "influence": 1.0,
-                    "invert_x": false,
-                    "invert_y": false,
-                    "invert_z": false,
-                    "mute": false,
-                    "owner_space": "WORLD",
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "calf_l",
-                    "target": "armature",
-                    "target_space": "WORLD",
-                    "use_bbone_shape": false,
-                    "use_offset": false,
-                    "use_x": true,
-                    "use_y": true,
-                    "use_z": true
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                15.219926834106445,
-                -0.20208311080932617,
-                12.578049659729004
+                15.0,
+                0.0,
+                12.5
             ],
             "tail": [
-                15.219926834106445,
-                14.797918319702148,
-                12.578048706054688
+                15.0,
+                15.0,
+                12.5
             ]
         },
         "ball_l": {
@@ -5000,60 +1606,20 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": false,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "ball_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                },
-                {
-                    "type": "COPY_LOCATION",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 1.0,
-                    "influence": 1.0,
-                    "invert_x": false,
-                    "invert_y": false,
-                    "invert_z": false,
-                    "mute": false,
-                    "owner_space": "WORLD",
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "foot_l",
-                    "target": "armature",
-                    "target_space": "WORLD",
-                    "use_bbone_shape": false,
-                    "use_offset": false,
-                    "use_x": true,
-                    "use_y": true,
-                    "use_z": true
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true
             },
             "head": [
-                15.210447311401367,
-                -9.11053466796875,
-                3.164447784423828
+                15.0,
+                -10.0,
+                3.0
             ],
             "tail": [
-                15.210447311401367,
-                -9.110532760620117,
-                19.09280014038086
+                15.0,
+                -10.0,
+                19.0
             ]
         },
         "interaction": {
@@ -5278,39 +1844,21 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "leg_ik_l",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true,
                 "filmboxTypeID": "5"
             },
             "head": [
-                15.219926834106445,
-                -0.20208311080932617,
-                12.578049659729004
+                15.0,
+                0.0,
+                12.5
             ],
             "tail": [
-                15.219926834106445,
-                14.797918319702148,
-                12.578048706054688
+                15.0,
+                15.0,
+                12.5
             ]
         },
         "ik_foot_r": {
@@ -5356,39 +1904,21 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "LOCAL",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "leg_ik_r",
-                    "target": "armature",
-                    "target_space": "LOCAL_OWNER_ORIENT",
-                    "use_bbone_shape": false
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true,
                 "filmboxTypeID": "5"
             },
             "head": [
-                -15.207133293151855,
-                -0.2487550973892212,
-                12.569074630737305
+                -15.0,
+                0.0,
+                12.5
             ],
             "tail": [
-                -15.185696601867676,
-                -15.248739242553711,
-                12.569076538085938
+                -15.0,
+                15.0,
+                12.5
             ]
         },
         "ik_hand_root": {
@@ -5497,46 +2027,21 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
-                {
-                    "type": "CHILD_OF",
-                    "active": true,
-                    "enabled": true,
-                    "influence": 1.0,
-                    "inverse_matrix": "<Matrix 4x4 (-1.0000, -0.0000, 0.0000,  -67.9595)\n            ( 0.0000, -0.0000, 1.0000, -113.7231)\n            (-0.0000,  1.0000, 0.0000,   -0.2210)\n            ( 0.0000,  0.0000, 0.0000,    1.0000)>",
-                    "mute": false,
-                    "owner_space": "POSE",
-                    "set_inverse_pending": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "hand_r",
-                    "target": "root",
-                    "target_space": "WORLD",
-                    "use_location_x": true,
-                    "use_location_y": true,
-                    "use_location_z": true,
-                    "use_rotation_x": true,
-                    "use_rotation_y": true,
-                    "use_rotation_z": true,
-                    "use_scale_x": true,
-                    "use_scale_y": true,
-                    "use_scale_z": true
-                }
-            ],
+            "constraints": [],
             "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true,
                 "filmboxTypeID": "5"
             },
             "head": [
-                -67.95953369140625,
-                0.2209538370370865,
-                113.72314453125
+                -67.80000305175781,
+                0.0,
+                113.5
             ],
             "tail": [
-                -67.951416015625,
-                0.006384313106536865,
-                158.61154174804688
+                -67.80000305175781,
+                0.0,
+                68.0
             ]
         },
         "ik_hand_l": {
@@ -5582,39 +2087,70 @@
                 ]
             },
             "rotation_mode": "QUATERNION",
-            "constraints": [
+            "constraints": [],
+            "drivers": [
                 {
-                    "type": "COPY_TRANSFORMS",
-                    "active": true,
-                    "enabled": true,
-                    "head_tail": 0.0,
-                    "influence": 1.0,
-                    "mix_mode": "REPLACE",
-                    "mute": false,
-                    "owner_space": "WORLD",
-                    "remove_target_shear": false,
-                    "space_object": null,
-                    "space_subtarget": "",
-                    "subtarget": "hand_l",
-                    "target": "root",
-                    "target_space": "WORLD",
-                    "use_bbone_shape": false
+                    "data_path": "pose.bones[\"ik_hand_l\"].rotation_quaternion",
+                    "expression": "var",
+                    "variables": [
+                        {
+                            "name": "var",
+                            "type": "TRANSFORMS",
+                            "target_id": "armature",
+                            "data_path": ""
+                        }
+                    ]
+                },
+                {
+                    "data_path": "pose.bones[\"ik_hand_l\"].rotation_quaternion",
+                    "expression": "var",
+                    "variables": [
+                        {
+                            "name": "var",
+                            "type": "TRANSFORMS",
+                            "target_id": "armature",
+                            "data_path": ""
+                        }
+                    ]
+                },
+                {
+                    "data_path": "pose.bones[\"ik_hand_l\"].rotation_quaternion",
+                    "expression": "var",
+                    "variables": [
+                        {
+                            "name": "var",
+                            "type": "TRANSFORMS",
+                            "target_id": "armature",
+                            "data_path": ""
+                        }
+                    ]
+                },
+                {
+                    "data_path": "pose.bones[\"ik_hand_l\"].rotation_quaternion",
+                    "expression": "var",
+                    "variables": [
+                        {
+                            "name": "var",
+                            "type": "TRANSFORMS",
+                            "target_id": "armature",
+                            "data_path": ""
+                        }
+                    ]
                 }
             ],
-            "drivers": [],
             "custom_properties": {
                 "lockInfluenceWeights": true,
                 "filmboxTypeID": "5"
             },
             "head": [
-                67.951416015625,
-                0.006384313106536865,
-                113.72314453125
+                67.80000305175781,
+                0.0,
+                113.5
             ],
             "tail": [
-                67.951416015625,
-                0.006384313106536865,
-                68.8347396850586
+                67.80000305175781,
+                0.0,
+                68.0
             ]
         },
         "ik_hand_r": {
@@ -5667,14 +2203,14 @@
                 "filmboxTypeID": "5"
             },
             "head": [
-                -67.95953369140625,
-                0.2209538370370865,
-                113.72314453125
+                -67.80000305175781,
+                0.0,
+                113.5
             ],
             "tail": [
-                -67.951416015625,
-                0.006384313106536865,
-                158.61154174804688
+                -67.80000305175781,
+                0.0,
+                68.0
             ]
         }
     }

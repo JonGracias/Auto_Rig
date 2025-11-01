@@ -3,7 +3,6 @@ import os
 import json
 from bpy.types import Panel, Operator, PropertyGroup # type: ignore
 from bpy.props import EnumProperty, BoolProperty # type: ignore
-
 from ..utils import export_clean_data
 
 

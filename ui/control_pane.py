@@ -1,5 +1,4 @@
 import bpy # type: ignore
-import os
 
 # --------- Panel ---------
 class AUTORIG_PT_ControlRig(bpy.types.Panel):

@@ -6,7 +6,7 @@ import bpy # type: ignore
 import json
 from pathlib import Path
 
-SCALE = 1  # Or whatever you need
+SCALE = 1 # Or whatever you need
 
 #-------------------------------------Translation Functions-------------------------------------#
 
@@ -106,9 +106,6 @@ def get_source_file_path(armature_name="driver", limb_chain_name="arm_l"):
     return Path(scripts_dir) / "addons" / "Auto_Rig" / "Hierarchy" / armature_name / f"{limb_chain_name}.json"
 
 def get_data_from_file(filepath):
-    if not os.path.exists(filepath):
-        raise FileNotFoundError(f"[ERROR] File not found: {filepath}")
-
     with open(filepath, 'r') as f:
         data = json.load(f)
 
@@ -144,7 +141,7 @@ def apply_global_transform(armature, meta_data):
     print(f"[apply_global_transform] setting location: {location}")
     armature.location = location
 
-    # Apply scale
+    # Apply Armature scale
     scale = Vector(transform.get("scale", [1.0, 1.0, 1.0]))
     print(f"[apply_global_transform] setting scale: {scale}")
     armature.scale = scale

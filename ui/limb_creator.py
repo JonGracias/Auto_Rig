@@ -50,18 +50,19 @@ class LIMB_OT_Build(bpy.types.Operator):
             limb_chain_name = props.control_limb_name
             source_name     = props.control_armature_name
         else:
-            return self.report({'ERROR'}, "Invalid mode.")
+            self.report({'ERROR'}, "Invalid mode.")
+            return {'CANCELLED'}
 
         if not source_name:
             self.report({'ERROR'}, "Source Armature must be set.")
             return {'CANCELLED'}
-
+        
+        if not limb_chain_name or limb_chain_name.strip() == "":
+            self.report({'WARNING'}, "No limb selected. Please choose a limb before building.")
+            return {'CANCELLED'}
 
         # Build it!
         create_limb_chain.main(source_name, limb_chain_name, retarget_name)
-
-        
-
         return {'FINISHED'}
 
 

@@ -1,44 +1,16 @@
 [
     {
-        "name": "driver.01",
-        "created": "2025-07-10",
-        "is_deform": false,
-        "notes": "Auto-added from export_clean_data",
-        "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\driver.01"
-    },
-    {
-        "name": "root.001",
-        "created": "2025-07-10",
-        "is_deform": true,
-        "notes": "Auto-added from export_clean_data",
-        "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\root.001"
-    },
-    {
-        "name": "control_deform",
-        "created": "2025-08-02",
-        "is_deform": true,
-        "notes": "Auto-added from export_clean_data",
-        "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\control_deform"
-    },
-    {
-        "name": "root",
-        "created": "2025-08-02",
-        "is_deform": true,
-        "notes": "Auto-added from export_clean_data",
-        "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\root"
-    },
-    {
-        "name": "driver",
-        "created": "2025-08-05",
-        "is_deform": false,
-        "notes": "Auto-added from export_clean_data",
-        "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\driver"
-    },
-    {
         "name": "armature",
-        "created": "2025-08-07",
+        "created": "2025-08-28",
         "is_deform": false,
         "notes": "Auto-added from export_clean_data",
         "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\armature"
+    },
+    {
+        "name": "root",
+        "created": "2025-08-28",
+        "is_deform": true,
+        "notes": "Auto-added from export_clean_data",
+        "path": "C:\\Users\\jon\\AppData\\Roaming\\Blender Foundation\\Blender\\4.4\\scripts\\addons\\Auto_Rig\\Hierarchy\\root"
     }
 ]
